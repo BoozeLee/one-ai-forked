@@ -55,6 +55,7 @@ the oldest plate in the cabinet and finds neither is older than the other.
 | 13 | 13 — THREE WINGS | [`stories/13.md`](stories/13.md) |
 | 14 | 14 — THE CHART OF EVERYTHING | [`stories/14.md`](stories/14.md) |
 | 15 | 15 — THE LONG LIGHT | [`stories/15.md`](stories/15.md) |
+| 16 | 16 — TWO FACES BOWED | [`stories/16.md`](stories/16.md) |
 | 20 | 20 — ONE REAL THING | [`stories/20.md`](stories/20.md) |
 | 25 | 25 — INSTRUMENTATION | [`stories/25.md`](stories/25.md) |
 
