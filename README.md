@@ -57,6 +57,7 @@ the oldest plate in the cabinet and finds neither is older than the other.
 | 15 | 15 — THE LONG LIGHT | [`stories/15.md`](stories/15.md) |
 | 16 | 16 — TWO FACES BOWED | [`stories/16.md`](stories/16.md) |
 | 17 | 17 — THE COST | [`stories/17.md`](stories/17.md) |
+| 18 | 18 — FOUR EYES | [`stories/18.md`](stories/18.md) |
 | 20 | 20 — ONE REAL THING | [`stories/20.md`](stories/20.md) |
 | 25 | 25 — INSTRUMENTATION | [`stories/25.md`](stories/25.md) |
 
