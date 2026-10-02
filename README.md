@@ -51,7 +51,7 @@ the oldest plate in the cabinet and finds neither is older than the other.
 | 09 | 09 — FORGED | [`stories/09.md`](stories/09.md) |
 | 10 | 10 — THE INKED PANEL | [`stories/10.md`](stories/10.md) |
 | 11 | 11 — FORGE OF VERTEBRAE | [`stories/11.md`](stories/11.md) |
-| 12 | 12 | [`stories/12.md`](stories/12.md) |
+| 12 | 12 — THE VEIL | [`stories/12.md`](stories/12.md) |
 | 13 | 13 — THREE WINGS | [`stories/13.md`](stories/13.md) |
 | 14 | 14 — THE CHART OF EVERYTHING | [`stories/14.md`](stories/14.md) |
 | 15 | 15 — THE LONG LIGHT | [`stories/15.md`](stories/15.md) |
@@ -65,6 +65,7 @@ the oldest plate in the cabinet and finds neither is older than the other.
 | 23 | 23 — THE ORNAMENT | [`stories/23.md`](stories/23.md) |
 | 24 | 24 — THE BOOK PLATE | [`stories/24.md`](stories/24.md) |
 | 25 | 25 — INSTRUMENTATION | [`stories/25.md`](stories/25.md) |
+| 26 | 26 — EIGHT SUBSYSTEMS | [`stories/26.md`](stories/26.md) |
 
 <!-- STORY-INDEX:END -->
 
