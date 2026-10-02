@@ -49,6 +49,7 @@ the oldest plate in the cabinet and finds neither is older than the other.
 | 07 | 07 — TWO STORKS | [`stories/07.md`](stories/07.md) |
 | 08 | 08 — THE FORK | [`stories/08.md`](stories/08.md) |
 | 09 | 09 — FORGED | [`stories/09.md`](stories/09.md) |
+| 10 | 10 — THE INKED PANEL | [`stories/10.md`](stories/10.md) |
 | 20 | 20 — ONE REAL THING | [`stories/20.md`](stories/20.md) |
 | 25 | 25 — INSTRUMENTATION | [`stories/25.md`](stories/25.md) |
 
