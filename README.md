@@ -63,6 +63,7 @@ the oldest plate in the cabinet and finds neither is older than the other.
 | 21 | 21 — CHAPTER ONE | [`stories/21.md`](stories/21.md) |
 | 22 | 22 — REAL SYMBOLS | [`stories/22.md`](stories/22.md) |
 | 23 | 23 — THE ORNAMENT | [`stories/23.md`](stories/23.md) |
+| 24 | 24 — THE BOOK PLATE | [`stories/24.md`](stories/24.md) |
 | 25 | 25 — INSTRUMENTATION | [`stories/25.md`](stories/25.md) |
 
 <!-- STORY-INDEX:END -->
