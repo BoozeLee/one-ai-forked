@@ -118,21 +118,33 @@ arise. **Do not add a font file to the product** without adding the OFL text.
 **Leonardo AI**. Used as the calibration corpus for `styleprint.py` and
 `postgate.py`.
 
-Two facts about them are unresolved and both matter:
+**Ownership: confirmed.** The account was a **paid** Leonardo subscription
+(ToS §8.3), so ownership of all IP in the content vested in the creator upon
+creation and Leonardo assigned its right, title and interest to them. The
+copyright in these 48 images is the project owner's. This was stated by the
+owner directly; the JPEGs themselves are metadata-stripped (`im.getexif()`
+returns NONE) so the tier cannot be re-verified from the files.
 
-1. **Leonardo account tier.** Paid subscribers vest IP in the creator on creation;
-   free subscribers grant Leonardo the IP and take a non-exclusive royalty-free
-   commercial licence — which still permits selling, but never exclusively. The
-   48 JPEGs are metadata-stripped (`im.getexif()` returns NONE), so the tier
-   cannot be recovered from the files. Only the account history knows.
-2. **Public or private mode.** Public generations grant Leonardo a perpetual,
-   irrevocable, transferable licence including for training and any commercial
-   purpose.
+**One fact remains open.** Whether the generations were **public or private** on
+Leonardo's platform is not recorded here. On a paid plan, *public* generations
+grant Leonardo a non-exclusive, irrevocable, perpetual, royalty-free,
+worldwide, transferable licence including for training and any commercial
+purpose, and other platform users could have viewed them. This does not affect
+the owner's right to publish. It affects only two things: how strong an
+exclusivity claim a paid bundle can make, and whether another user could have
+generated a similar output — a non-uniqueness risk Leonardo warns about for all
+tiers.
 
-**The architecture side-steps both.** The 48 covers are used as **advertising**
-(displayed on the storefront), never resold inside a paid download. Display is
-licensed under every scenario; bundling is the only case that creates the
-exclusivity problem, and the product does not need it.
+**What the paid tier means for the product.** Because the owner holds the
+copyright, the 48 covers can be published, and they are, in this repository.
+What the open public/private question means is narrower: a paid bundle should
+not promise *exclusive* rights to the images, because if they were public
+another user may have produced something similar.
+
+The images are released here **without a licence file**. That is deliberate:
+an unlicensed public repository defaults to all-rights-reserved, which is a
+valid and conservative state. Choose a licence deliberately — CC-BY-4.0 if the
+aim is reuse, and note it carries four non-commercial clauses.
 
 One corpus-specific risk is recorded rather than resolved: at least one image
 contains a third-party trademark (a Bitcoin ₿ glyph) and several carry invented

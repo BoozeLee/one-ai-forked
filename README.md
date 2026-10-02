@@ -101,6 +101,8 @@ Every module ships a `KNOWN_LIMITS` block. Three findings worth stating here:
 
 Covers: [Leonardo AI](https://leonardo.ai) — see `docs/THIRD-PARTY.md` for the
 provenance record and the licence position on the artwork.
+Copyright in the 48 covers is the project owner's: they were generated on a
+paid Leonardo AI subscription, which vests ownership in the creator.
 
 Storytelling method owes the generic three-phase arc only
 (setup / confrontation / resolution). `docs/THIRD-PARTY.md` records the two
