@@ -62,6 +62,7 @@ the oldest plate in the cabinet and finds neither is older than the other.
 | 20 | 20 — ONE REAL THING | [`stories/20.md`](stories/20.md) |
 | 21 | 21 — CHAPTER ONE | [`stories/21.md`](stories/21.md) |
 | 22 | 22 — REAL SYMBOLS | [`stories/22.md`](stories/22.md) |
+| 23 | 23 — THE ORNAMENT | [`stories/23.md`](stories/23.md) |
 | 25 | 25 — INSTRUMENTATION | [`stories/25.md`](stories/25.md) |
 
 <!-- STORY-INDEX:END -->
