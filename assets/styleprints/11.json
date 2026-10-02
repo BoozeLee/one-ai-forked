@@ -4,14 +4,14 @@
  "arc": "III",
  "device": "navy-coral",
  "sha8_table": "7e242cc3",
- "master": "/home/kilisan/Dropbox/Lucid_Origin_Forge_a_complex_HQ_symbolic_2D_comic_in_psychedel_3.jpg",
+ "master": "${ART_ROOT}/Lucid_Origin_Forge_a_complex_HQ_symbolic_2D_comic_in_psychedel_3.jpg",
  "master_sha8": "7e242cc3",
  "master_bytes": 1344468,
  "pixels": [
   1200,
   1200
  ],
- "repo_copy": "/home/kilisan/amph-public/art/11.jpg",
+ "repo_copy": "${REPO_ROOT}/art/11.jpg",
  "repo_copy_sha8": "552c6aba",
  "axes": {
   "ink_frac": 0.133154296875,

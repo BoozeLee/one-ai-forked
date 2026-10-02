@@ -4,14 +4,14 @@
  "arc": "VII",
  "device": "crimson-gold",
  "sha8_table": "752e130f",
- "master": "/home/kilisan/Dropbox/Lucid_Origin_Unique_Art_Prompt_for_Chapter_1_Amphetamemes_Styl_2.jpg",
+ "master": "${ART_ROOT}/Lucid_Origin_Unique_Art_Prompt_for_Chapter_1_Amphetamemes_Styl_2.jpg",
  "master_sha8": "752e130f",
  "master_bytes": 1503014,
  "pixels": [
   1200,
   1200
  ],
- "repo_copy": "/home/kilisan/amph-public/art/23.jpg",
+ "repo_copy": "${REPO_ROOT}/art/23.jpg",
  "repo_copy_sha8": "633d1151",
  "axes": {
   "ink_frac": 0.230068359375,

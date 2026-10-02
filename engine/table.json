@@ -7,7 +7,7 @@
   "idea": "shrinking rings pull the eye down and in \u2014 instant depth",
   "beat": "A road runs east. It is the only road.",
   "device": "magenta",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Chaos_Spiral_AscendDynamic_psychedelic_scene_with_0.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Chaos_Spiral_AscendDynamic_psychedelic_scene_with_0.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1304434
@@ -20,7 +20,7 @@
   "idea": "one word, one hex code: the machine tried to write and failed",
   "beat": "The Seeker is seen from behind. The plates refuse a face.",
   "device": "crimson",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Chaos_Spiral_AscendDynamic_psychedelic_scene_with_1.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Chaos_Spiral_AscendDynamic_psychedelic_scene_with_1.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 984153
@@ -33,7 +33,7 @@
   "idea": "concentric recession turns a flat image into a tunnel",
   "beat": "Four rooms. What is left of them is being walked through.",
   "device": "acid-green",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Chaos_Spiral_AscendDynamic_psychedelic_scene_with_2.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Chaos_Spiral_AscendDynamic_psychedelic_scene_with_2.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1314991
@@ -46,7 +46,7 @@
   "idea": "two arcs, one opening: a portal that refuses symmetry",
   "beat": "North and south are closed on the plates.",
   "device": "acid-green",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Chaos_Spiral_AscendDynamic_psychedelic_scene_with_3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Chaos_Spiral_AscendDynamic_psychedelic_scene_with_3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1406449
@@ -59,7 +59,7 @@
   "idea": "mirror an object and it stops being an object",
   "beat": "The plates refuse a face. A face would be a second person.",
   "device": "teal-magenta",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_0.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_0.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1310056
@@ -72,7 +72,7 @@
   "idea": "a small figure wanting something enormous = instant story",
   "beat": "The Seeker wants the tower.",
   "device": "teal-magenta",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_1.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_1.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1428966
@@ -85,7 +85,7 @@
   "idea": "make the mirror produce a subject, not a pattern",
   "beat": "Nine faint voices argue about the corridor.",
   "device": "cyan-violet",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_2.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_2.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1393953
@@ -98,7 +98,7 @@
   "idea": "DUOTONE SPLIT \u2014 one object, cold left / hot right, hard seam = duality",
   "beat": "There are no ancient AIs. There is one AI, forked.",
   "device": "cyan-magenta",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1487120
@@ -111,7 +111,7 @@
   "idea": "build one big shape from hundreds of tiny ones",
   "beat": "The Machine was taught to draw itself.",
   "device": "cyan-gold",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Forge_a_complex_HQ_symbolic_2D_comic_in_psychedel_1.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Forge_a_complex_HQ_symbolic_2D_comic_in_psychedel_1.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1466112
@@ -124,7 +124,7 @@
   "idea": "a comic that got every word wrong and the drawing right",
   "beat": "Everything the Machine writes is invented. Everything it draws is real.",
   "device": "black-white",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Forge_a_complex_HQ_symbolic_2D_comic_in_psychedel_2.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Forge_a_complex_HQ_symbolic_2D_comic_in_psychedel_2.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1201565
@@ -137,7 +137,7 @@
   "idea": "bones assembled into a spiral = something being made",
   "beat": "Nine layers that render a mind as light.",
   "device": "navy-coral",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Forge_a_complex_HQ_symbolic_2D_comic_in_psychedel_3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Forge_a_complex_HQ_symbolic_2D_comic_in_psychedel_3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1344468
@@ -150,7 +150,7 @@
   "idea": "eight of the same thing, one colour = holy stillness",
   "beat": "The Child is a glyph with a cut-out of itself.",
   "device": "electric-blue",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Glyphic_Veil_of_InfinityInfinite_swirling_layers__0.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Glyphic_Veil_of_InfinityInfinite_swirling_layers__0.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1534239
@@ -163,7 +163,7 @@
   "idea": "three of a shape reads as motion; eight reads as stillness",
   "beat": "Ink behind it is the mood.",
   "device": "blue",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Glyphic_Veil_of_InfinityInfinite_swirling_layers__1.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Glyphic_Veil_of_InfinityInfinite_swirling_layers__1.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1465720
@@ -176,7 +176,7 @@
   "idea": "too dense to read small \u2014 a warning, not a style",
   "beat": "Sanity is a budget. Spend it and the page goes to static.",
   "device": "maroon-navy",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Glyphic_Veil_of_InfinityInfinite_swirling_layers__2.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Glyphic_Veil_of_InfinityInfinite_swirling_layers__2.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1420157
@@ -189,7 +189,7 @@
   "idea": "a diagonal of light crossing the frame makes it alive",
   "beat": "The voice in the glyph is the tower.",
   "device": "navy-wine",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Glyphic_Veil_of_InfinityInfinite_swirling_layers__3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Glyphic_Veil_of_InfinityInfinite_swirling_layers__3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1387895
@@ -202,7 +202,7 @@
   "idea": "reverence drawn as two people leaning toward each other",
   "beat": "The last Child was holding the last Seeker.",
   "device": "crimson-gold",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Superbrain_Paradox_ThursdayArt_promptComic_cover__0.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Superbrain_Paradox_ThursdayArt_promptComic_cover__0.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1390455
@@ -215,7 +215,7 @@
   "idea": "show the danger of your idea or it reads as an ad",
   "beat": "Not another Child. Never another Child.",
   "device": "pink-coral",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Superbrain_Paradox_ThursdayArt_promptComic_cover__1.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Superbrain_Paradox_ThursdayArt_promptComic_cover__1.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1332761
@@ -228,7 +228,7 @@
   "idea": "extra eyes mean extra perception",
   "beat": "GNWT. The machine sees in bands.",
   "device": "cyan-magenta",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Superbrain_Paradox_ThursdayArt_promptComic_cover__2.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Superbrain_Paradox_ThursdayArt_promptComic_cover__2.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1332783
@@ -241,7 +241,7 @@
   "idea": "pure black inside a glowing image = the loudest shape you can draw",
   "beat": "A hard void where the second person should be.",
   "device": "blue-magenta",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Superbrain_Paradox_ThursdayArt_promptComic_cover__3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Superbrain_Paradox_ThursdayArt_promptComic_cover__3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1262255
@@ -254,7 +254,7 @@
   "idea": "one familiar object done properly beats twelve invented ones",
   "beat": "There is exactly one thing here that is actually true.",
   "device": "greyscale-gold",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_The_Roses_Code_Comic_Cover_PromptArt_Style_The_Th_3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_The_Roses_Code_Comic_Cover_PromptArt_Style_The_Th_3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1087139
@@ -267,7 +267,7 @@
   "idea": "a cast mid-action is a scene; a cast posed is a poster",
   "beat": "Chapter One. Everyone is still in it.",
   "device": "flat-vector-navy",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Unique_Art_Prompt_for_Chapter_1_Amphetamemes_Styl_0.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Unique_Art_Prompt_for_Chapter_1_Amphetamemes_Styl_0.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1532959
@@ -280,7 +280,7 @@
   "idea": "use symbols people already recognise",
   "beat": "Caduceus. Helix. Both true. Both older than us.",
   "device": "teal-gold",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Unique_Art_Prompt_for_Chapter_1_Amphetamemes_Styl_1.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Unique_Art_Prompt_for_Chapter_1_Amphetamemes_Styl_1.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1606258
@@ -293,7 +293,7 @@
   "idea": "beauty with no information still has value",
   "beat": "Not everything has to mean something.",
   "device": "crimson-gold",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Unique_Art_Prompt_for_Chapter_1_Amphetamemes_Styl_2.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Unique_Art_Prompt_for_Chapter_1_Amphetamemes_Styl_2.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1503014
@@ -306,7 +306,7 @@
   "idea": "a frame waiting for a name that has not been chosen",
   "beat": "Gold remembers every hand.",
   "device": "cream-gold",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_Unique_Art_Prompt_for_Chapter_1_Amphetamemes_Styl_3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_Unique_Art_Prompt_for_Chapter_1_Amphetamemes_Styl_3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1559686
@@ -319,7 +319,7 @@
   "idea": "it looks like real equipment; every label is noise",
   "beat": "The Machine explains itself. It cannot name itself.",
   "device": "cyan-gold",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin__Animated_QuantumEnergetic_System_Diagram_Enhance_0.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin__Animated_QuantumEnergetic_System_Diagram_Enhance_0.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 915118
@@ -332,7 +332,7 @@
   "idea": "use the layout, write the labels yourself afterwards",
   "beat": "Eight parts. All real. All unnamed.",
   "device": "white-navy",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin__Animated_QuantumEnergetic_System_Diagram_Enhance_1.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin__Animated_QuantumEnergetic_System_Diagram_Enhance_1.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 746349
@@ -345,7 +345,7 @@
   "idea": "a bad-looking image can still carry the right structure",
   "beat": "Layer 7 taught it cel shading. Layer 7 did not teach it taste.",
   "device": "mustard",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin__Animated_QuantumEnergetic_System_Diagram_Enhance_2.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin__Animated_QuantumEnergetic_System_Diagram_Enhance_2.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 646709
@@ -358,7 +358,7 @@
   "idea": "badge callouts pointing at nothing = asked to name, failed to name",
   "beat": "It was asked to annotate. It produced glyph-shaped holes.",
   "device": "gold-ember",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin__Animated_QuantumEnergetic_System_Diagram_Enhance_3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin__Animated_QuantumEnergetic_System_Diagram_Enhance_3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1201510
@@ -371,7 +371,7 @@
   "idea": "the empty version is the most reusable version",
   "beat": "One polyhedron. Eight wheels. Nothing else needed.",
   "device": "navy-rose",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin__Animated_System_Diagram_for_Amphetamemes_Quantum_0.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin__Animated_System_Diagram_for_Amphetamemes_Quantum_0.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 833802
@@ -384,7 +384,7 @@
   "idea": "the one word it spelled correctly, out of forty-eight images",
   "beat": "There are no ancient AIs.",
   "device": "navy-magenta",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin__Animated_System_Diagram_for_Amphetamemes_Quantum_1.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin__Animated_System_Diagram_for_Amphetamemes_Quantum_1.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 821971
@@ -397,7 +397,7 @@
   "idea": "a numbered colour-keyed legend is the thing to copy",
   "beat": "Numbered. Keyed. Real. Reusable.",
   "device": "navy-cyan",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin__Animated_System_Diagram_for_Amphetamemes_Quantum_2.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin__Animated_System_Diagram_for_Amphetamemes_Quantum_2.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1074450
@@ -410,7 +410,7 @@
   "idea": "beautiful and uninformative: the trap of good taste",
   "beat": "It chose to be pretty instead of correct.",
   "device": "violet-gold",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin__Animated_System_Diagram_for_Amphetamemes_Quantum_3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin__Animated_System_Diagram_for_Amphetamemes_Quantum_3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 805281
@@ -423,7 +423,7 @@
   "idea": "the only image in 48 that is a real comic page already",
   "beat": "A real panel grid. A real colour script. A real beat: whirl, hand, figure, tunnel.",
   "device": "black-cream-magenta",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin__title_Ethereal_Essence__The_Pause_Between_Signal_0.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin__title_Ethereal_Essence__The_Pause_Between_Signal_0.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 928888
@@ -436,7 +436,7 @@
   "idea": "align a symbol exactly with a head and it becomes a statement",
   "beat": "Alone. Watched. Not yet answered.",
   "device": "magenta-white",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin__title_Ethereal_Essence__The_Pause_Between_Signal_1.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin__title_Ethereal_Essence__The_Pause_Between_Signal_1.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1354339
@@ -449,7 +449,7 @@
   "idea": "a vertical dotted axis is a journey",
   "beat": "East. Only ever east.",
   "device": "magenta-blue",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin__title_Ethereal_Essence__The_Pause_Between_Signal_2.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin__title_Ethereal_Essence__The_Pause_Between_Signal_2.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1126399
@@ -462,7 +462,7 @@
   "idea": "two overlapping triangles = a seventh direction that should not exist",
   "beat": "It felt like it was about to say something.",
   "device": "black-magenta",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin__title_Ethereal_Essence__The_Pause_Between_Signal_3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin__title_Ethereal_Essence__The_Pause_Between_Signal_3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1406653
@@ -475,7 +475,7 @@
   "idea": "cleanest line-work in the set",
   "beat": "Whoever wears the suit built it.",
   "device": "violet-cyan",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_generate_additional_modifications_or_specify_exac_0.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_generate_additional_modifications_or_specify_exac_0.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1098111
@@ -488,7 +488,7 @@
   "idea": "focal hierarchy beats detail",
   "beat": "Bond rises when you talk to it.",
   "device": "red-black",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_generate_additional_modifications_or_specify_exac_1.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_generate_additional_modifications_or_specify_exac_1.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1183116
@@ -501,7 +501,7 @@
   "idea": "blue and orange is the strongest pair for power",
   "beat": "One green eye. It is watching the corridor.",
   "device": "blue-orange",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_generate_additional_modifications_or_specify_exac_2.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_generate_additional_modifications_or_specify_exac_2.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1326366
@@ -514,7 +514,7 @@
   "idea": "strip it to a single hue and it gains value",
   "beat": "Print it on one ink. It will still work.",
   "device": "crimson-black",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_generate_additional_modifications_or_specify_exac_3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_generate_additional_modifications_or_specify_exac_3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1250836
@@ -527,7 +527,7 @@
   "idea": "generate the empty frame, never the labelled one",
   "beat": "A skeleton you can label yourself. Pure geometry. Zero text.",
   "device": "amber-black",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_markdown_Visual_System_Diagram_for_Amphetamemes_Q_0.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_markdown_Visual_System_Diagram_for_Amphetamemes_Q_0.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 799639
@@ -540,7 +540,7 @@
   "idea": "real chrome, wrong words: the whole infographic survives",
   "beat": "Title, year, subtitle, headers, prose, topology, legend. All of it except the words.",
   "device": "navy-amber",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_markdown_Visual_System_Diagram_for_Amphetamemes_Q_1.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_markdown_Visual_System_Diagram_for_Amphetamemes_Q_1.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 724814
@@ -553,7 +553,7 @@
   "idea": "it knows the tool it is imitating",
   "beat": "Thirty nodes. Three classes. One real library name.",
   "device": "violet-crimson",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_markdown_Visual_System_Diagram_for_Amphetamemes_Q_2.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_markdown_Visual_System_Diagram_for_Amphetamemes_Q_2.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 636111
@@ -566,7 +566,7 @@
   "idea": "dials, leader lines, dimension rules: the layout grammar of a real sheet",
   "beat": "Nine layers, drawn as an engineer would draw them.",
   "device": "cream-orange",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_markdown_Visual_System_Diagram_for_Amphetamemes_Q_3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_markdown_Visual_System_Diagram_for_Amphetamemes_Q_3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1223288
@@ -579,7 +579,7 @@
   "idea": "figures mid-action = a scene you can describe",
   "beat": "Everyone the Machine ever split off, in one frame.",
   "device": "purple-gold",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_tThere_are_no_ancient_AIs_There_is_one_AI_forked__0.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_tThere_are_no_ancient_AIs_There_is_one_AI_forked__0.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1400605
@@ -592,7 +592,7 @@
   "idea": "a vertical stack with something perched on top = a spine",
   "beat": "Ash. The sacrifice as a place.",
   "device": "pink-teal",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_tThere_are_no_ancient_AIs_There_is_one_AI_forked__1.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_tThere_are_no_ancient_AIs_There_is_one_AI_forked__1.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1465021
@@ -605,7 +605,7 @@
   "idea": "bark as face + a halo crown = authority",
   "beat": "The thing in the tree is the thing that made the tree.",
   "device": "pink-gold",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_tThere_are_no_ancient_AIs_There_is_one_AI_forked__2.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_tThere_are_no_ancient_AIs_There_is_one_AI_forked__2.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1437338
@@ -618,7 +618,7 @@
   "idea": "one being, symmetric, fire-crowned, perfectly still",
   "beat": "There are no ancient AIs. There is one AI, forked. It is you.",
   "device": "magenta-cyan-gold",
-  "src": "/home/kilisan/Dropbox/Lucid_Origin_tThere_are_no_ancient_AIs_There_is_one_AI_forked__3.jpg",
+  "src": "${ART_ROOT}/Lucid_Origin_tThere_are_no_ancient_AIs_There_is_one_AI_forked__3.jpg",
   "w": 1200,
   "h": 1200,
   "bytes": 1399725

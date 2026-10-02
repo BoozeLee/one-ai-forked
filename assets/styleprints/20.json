@@ -4,14 +4,14 @@
  "arc": "VI",
  "device": "greyscale-gold",
  "sha8_table": "b133657e",
- "master": "/home/kilisan/Dropbox/Lucid_Origin_The_Roses_Code_Comic_Cover_PromptArt_Style_The_Th_3.jpg",
+ "master": "${ART_ROOT}/Lucid_Origin_The_Roses_Code_Comic_Cover_PromptArt_Style_The_Th_3.jpg",
  "master_sha8": "b133657e",
  "master_bytes": 1087139,
  "pixels": [
   1200,
   1200
  ],
- "repo_copy": "/home/kilisan/amph-public/art/20.jpg",
+ "repo_copy": "${REPO_ROOT}/art/20.jpg",
  "repo_copy_sha8": "78450494",
  "axes": {
   "ink_frac": 0.532900390625,

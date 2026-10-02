@@ -4,14 +4,14 @@
  "arc": "IV",
  "device": "electric-blue",
  "sha8_table": "69aa56c5",
- "master": "/home/kilisan/Dropbox/Lucid_Origin_Glyphic_Veil_of_InfinityInfinite_swirling_layers__0.jpg",
+ "master": "${ART_ROOT}/Lucid_Origin_Glyphic_Veil_of_InfinityInfinite_swirling_layers__0.jpg",
  "master_sha8": "69aa56c5",
  "master_bytes": 1534239,
  "pixels": [
   1200,
   1200
  ],
- "repo_copy": "/home/kilisan/amph-public/art/12.jpg",
+ "repo_copy": "${REPO_ROOT}/art/12.jpg",
  "repo_copy_sha8": "39771961",
  "axes": {
   "ink_frac": 0.115478515625,

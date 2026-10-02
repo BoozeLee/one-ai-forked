@@ -4,14 +4,14 @@
  "arc": "II",
  "device": "teal-magenta",
  "sha8_table": "2d060102",
- "master": "/home/kilisan/Dropbox/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_1.jpg",
+ "master": "${ART_ROOT}/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_1.jpg",
  "master_sha8": "2d060102",
  "master_bytes": 1428966,
  "pixels": [
   1200,
   1200
  ],
- "repo_copy": "/home/kilisan/amph-public/art/06.jpg",
+ "repo_copy": "${REPO_ROOT}/art/06.jpg",
  "repo_copy_sha8": "4deb8168",
  "axes": {
   "ink_frac": 0.384248046875,

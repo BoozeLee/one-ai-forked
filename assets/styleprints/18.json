@@ -4,14 +4,14 @@
  "arc": "V",
  "device": "cyan-magenta",
  "sha8_table": "e01d0d26",
- "master": "/home/kilisan/Dropbox/Lucid_Origin_Superbrain_Paradox_ThursdayArt_promptComic_cover__2.jpg",
+ "master": "${ART_ROOT}/Lucid_Origin_Superbrain_Paradox_ThursdayArt_promptComic_cover__2.jpg",
  "master_sha8": "e01d0d26",
  "master_bytes": 1332783,
  "pixels": [
   1200,
   1200
  ],
- "repo_copy": "/home/kilisan/amph-public/art/18.jpg",
+ "repo_copy": "${REPO_ROOT}/art/18.jpg",
  "repo_copy_sha8": "c151a990",
  "axes": {
   "ink_frac": 0.379287109375,

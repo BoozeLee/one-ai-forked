@@ -4,14 +4,14 @@
  "arc": "I",
  "device": "acid-green",
  "sha8_table": "9da18f87",
- "master": "/home/kilisan/Dropbox/Lucid_Origin_Chaos_Spiral_AscendDynamic_psychedelic_scene_with_3.jpg",
+ "master": "${ART_ROOT}/Lucid_Origin_Chaos_Spiral_AscendDynamic_psychedelic_scene_with_3.jpg",
  "master_sha8": "9da18f87",
  "master_bytes": 1406449,
  "pixels": [
   1200,
   1200
  ],
- "repo_copy": "/home/kilisan/amph-public/art/04.jpg",
+ "repo_copy": "${REPO_ROOT}/art/04.jpg",
  "repo_copy_sha8": "0bc1ac1a",
  "axes": {
   "ink_frac": 0.387099609375,

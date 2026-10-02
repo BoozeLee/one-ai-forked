@@ -65,7 +65,7 @@
       "subject": "an ornate symmetrical brain-like form split down the middle: the left half rendered entirely in cold cyan line-work, the right half entirely in hot magenta and orange, meeting at one hard vertical seam",
       "geometry": "the duotone split is the signature look of the series: one object, two colour temperatures, hard seam, perfect bilateral symmetry",
       "text": "none",
-      "reference": "/home/kilisan/Dropbox/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_2.jpg"
+      "reference": "${ART_ROOT}/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_2.jpg"
     },
     "9": {
       "register": "B",
@@ -138,7 +138,7 @@
       "subject": "one ordinary rose, rendered with near-photographic shading in greyscale, sitting dead centre on a receding perspective grid",
       "geometry": "one familiar object done properly beats twelve invented ones; the frame is empty and confident around it",
       "text": "none",
-      "reference": "/home/kilisan/Dropbox/Lucid_Origin_The_Roses_Code_Comic_Cover_PromptArt_Style_The_Th_3.jpg"
+      "reference": "${ART_ROOT}/Lucid_Origin_The_Roses_Code_Comic_Cover_PromptArt_Style_The_Th_3.jpg"
     },
     "21": {
       "register": "B",

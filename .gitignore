@@ -1,0 +1,56 @@
+# Secrets — never commit these, even by accident.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_rsa.*
+id_ed25519
+.netrc
+credentials
+credentials.*
+secrets.*
+*_secret*
+*_credential*
+*_token*
+service-account*.json
+gha-creds-*.json
+.npmrc
+.pypirc
+.htpasswd
+
+# Local tool state / build output (regenerable; never part of the product).
+work/
+logs/
+*.log
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+*.tmp
+*.bak
+*.orig
+*.rej
+
+# Art experiments and intermediates — the shipped art lives in art/.
+experiments/
+renders/
+comfy/
+*.png.tmp
+
+# Absolute home paths must never be committed: they leak the maintainer's username
+# and make the repo non-portable. Art provenance is recorded as ${ART_ROOT}/<filename>
+# instead — see README.md.
