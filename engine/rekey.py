@@ -101,7 +101,6 @@ sys.path.insert(0, str(HERE))
 
 import styleprint  # noqa: E402
 import postgate  # noqa: E402
-import rosette  # noqa: E402
 
 AXES = list(styleprint.FEATURE_NAMES)
 
@@ -366,9 +365,11 @@ def build_prompt(idx: int, target: dict, feat: dict, refname: str,
             f"## {sec}. THE FOLD",
             f"{n}-fold symmetry, and the number is deliberate, not incidental. "
             f"Diffusion models cannot draw exact rotational symmetry, so a second "
-            f"image is supplied: generate `rosette-{n}.png` with "
-            f"`python3 tools/rosette.py --n {n} --motif {motif} "
-            f"--out rosette-{n}.png`, upload THAT alongside the style "
+            f"image is supplied: generate `rosette-{n}.png` with the rosette "
+            f"module, which ships as its own repo `amph-rosette` rather than "
+            f"inside this one -- "
+            f"`python3 rosette.py --n {n} --motif {motif} "
+            f"--out rosette-{n}.png` -- upload THAT alongside the style "
             f"reference, and match its rotational rhythm exactly. Hold the count "
             f"precisely: {n}, not approximately.",
         ]
