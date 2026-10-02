@@ -89,7 +89,16 @@ def corrupt(arr: np.ndarray, kind: str) -> np.ndarray:
         boosted = np.clip(v + 6.0 * hp, 0.0, 1.0)
         return np.repeat(boosted[..., None], 3, axis=2)
     if kind == "desaturate":
-        return np.repeat(out.mean(axis=2, keepdims=True), 3, axis=2)
+        # grey must be the VALUE channel (max of R,G,B), not their mean. The mean
+        # of a saturated pixel is far below its value -- (0,0,255) becomes 85
+        # instead of 255 -- so a mean-grey "kills chroma" by destroying value as
+        # well, and edge_density, which is Sobel on the value channel, then moves
+        # for a reason that has nothing to do with colour. Measured: mean-grey
+        # moved edge_density +0.14 on plate 01 and +0.34 on plate 40; max-grey
+        # moves it by exactly 0.0000 while still zeroing chroma, mean_sat and
+        # hue_entropy. This control passed on the 48-image corpus only because
+        # "most colourful" happened to pick a plate mild enough to hide it.
+        return np.repeat(out.max(axis=2, keepdims=True), 3, axis=2)
     if kind == "brighten":
         return np.clip(out * 0.5 + 0.5, 0.0, 1.0)
     if kind == "rotate90":
