@@ -86,9 +86,17 @@ PRESENT_FORMS = re.compile(
 
 EMOJI = re.compile("[\U0001F300-\U0001FAFF☀-➿]")
 
+# A story must open with its own title. This check exists because story 12 was
+# published for months with no H1 at all, which the rest of the gate could not
+# see: it passed on word count, tense and rules, while the X-post block rendered
+# as "## 12 - " with an empty title and the README index row read "| 12 | 12 |".
+TITLE_RE = re.compile(r"^#\s*\d+\s*[—–-]\s*\S.*$", re.M)
+
 RULES = """\
 WORD COUNT      body words only (headings and emphasis stripped)
                 %d-%d, or %d for issues %s
+TITLE           must open with '# NN - TITLE'; an untitled story still passes
+                every other gate, so this is checked separately
 BANNED          %d phrases from lore/writing-standard.md
 GENDERED        he/she/him/her/his/hers/himself/herself -> must be zero
                 (the three pilot stories use they/them exclusively)
@@ -110,6 +118,8 @@ KNOWN_LIMITS = [
     "thing from a flat statement of one",
     "expected-set check compares filenames only; it cannot tell a finished draft "
     "from placeholder prose written to look finished",
+    "the title check tests only the shape of the H1, not that it matches "
+    "issues/table.json, so a story can carry a title that is not its canon one",
     "reader-address gate tests sentence-initial capital 'You' only; an impersonal "
     "'You' at the start of a sentence is missed, and a harmless mid-sentence "
     "address would still be flagged",
@@ -155,6 +165,9 @@ def check_one(n, path, bmap):
 
     if not (WORD_MIN <= w <= hi):
         fails.append(f"word count {w} outside {WORD_MIN}-{hi}")
+
+    if not TITLE_RE.search(path.read_text()):
+        fails.append("no H1 title line (expected '# NN - TITLE')")
 
     low = body.lower()
     hits = [b for b in BANNED if b in low]
