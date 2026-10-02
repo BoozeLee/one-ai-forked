@@ -1,0 +1,76 @@
+{
+ "issue": 15,
+ "title": "The Long Light",
+ "arc": "IV",
+ "device": "navy-wine",
+ "sha8_table": "2b52e7dd",
+ "master": "/home/kilisan/Dropbox/Lucid_Origin_Glyphic_Veil_of_InfinityInfinite_swirling_layers__3.jpg",
+ "master_sha8": "2b52e7dd",
+ "master_bytes": 1387895,
+ "pixels": [
+  1200,
+  1200
+ ],
+ "repo_copy": "/home/kilisan/amph-public/art/15.jpg",
+ "repo_copy_sha8": "4e4b7b7e",
+ "axes": {
+  "ink_frac": 0.177626953125,
+  "paper_frac": 0.04791015625,
+  "mean_v": 0.3798709809780121,
+  "v_contrast": 0.2181956022977829,
+  "mean_sat": 0.5638860464096069,
+  "hue_entropy": 0.5524502775167198,
+  "bimodality": 2.1040149657810394,
+  "edge_density": 0.5800666213035583,
+  "fine_detail": -0.5832665421409569,
+  "soft_frac": 0.049150390625,
+  "orient_evenness": 0.9994300612422733,
+  "bilateral": -0.0872427225112915
+ },
+ "style": {
+  "surface": "18% of the frame is solid dark",
+  "light": "mean value 0.38, contrast 0.22",
+  "colour": "mean saturation 0.56, hue spread 0.55",
+  "line": "edge density 0.58, fine detail -0.58",
+  "softness": "soft fraction 0.05 against 0.05 bare paper",
+  "symmetry": "orientation evenness 0.999, bilateral -0.087",
+  "tone": "bimodality 2.10"
+ },
+ "known_limits": {
+  "status": "measured negative results, deliberately not shipped as axes",
+  "why_this_exists": "The fork is the series' signature and the thing a buyer most needs to reproduce, so it is worth being precise about which half of it is measurable. It is a LAYOUT property plus a PALETTE property. The layout half is recoverable (see the bilateral axis). The palette half is not.",
+  "seam_palette_is_not_recoverable": {
+   "claim": "No pixel statistic can tell you a fork is cold on the left and hot on the right.",
+   "reason": "A bilaterally mirrored fork swaps hue across the seam by construction, so the left and right hue histograms are near-identical BY DESIGN. The eye reads cold-versus-warm as a labelling; the underlying distributions genuinely overlap. Any measure keyed on hue-mass difference is measuring the mirror, not the split.",
+   "consequence": "A fork cannot be obtained from a prompt. It can only be obtained from a reference image. That is the product argument for reference-anchored generation, and it is a measurement rather than an opinion."
+  },
+  "approaches_tried_and_failed": [
+   {
+    "name": "chroma Fisher on the two halves",
+    "axis": "tanh(1.6*fisher(chroma)) + tanh(2.0*|warmth_r - warmth_l|)",
+    "result": "inverted. seam family 0.097 (n=8) vs everything else 0.208 -- separation 0.47x",
+    "structural_cause": "cyan and magenta have near-equal luminance AND near-equal chroma magnitude; only hue differs. Any chroma-magnitude or luminance measure is blind to the signature feature."
+   },
+   {
+    "name": "hue-opponent axis times hue-histogram overlap",
+    "axis": "tanh(1.4*opponent_fisher) * (1 - Bhattacharyya(hue_hist_L, hue_hist_R, 12 bins))",
+    "result": "weak. seam mean 0.180 vs other 0.127, separation 1.41x. Issue 8 -- the clearest hard-seam image in the corpus by eye -- scored -0.054, dead last of all 48.",
+    "structural_cause": "the opponent axis does see the split (issue 8's raw opponent score of 1.50 was the highest in the corpus); the overlap multiplier destroys it, and the multiplier is itself buggy -- it returned ~1.056, which is impossible for properly normalised histograms."
+   },
+   {
+    "name": "local gradient ratio across a 3% centre band",
+    "axis": "tanh(grad_in_seam_band / grad_outside_band)",
+    "result": "tried on luminance, saturation and hue-derivative maps, each against its own rolled-25%-sideways negative control. No map separated the hard-seam sets (FORK, SUPERBRAIN) from MANDALA8 / LIQ / ROSE. The FORK scored 0.65x -- weaker than a random column.",
+    "structural_cause": "the seam is a global compositional property (cold half vs hot half), not a local edge. And the same near-equal-luminance problem applies."
+   }
+  ],
+  "near_constant_axes_kept_on_purpose": {
+   "orient_evenness": "Measured 0.949-1.000 across all 48 images. Tested with four gating schemes (all gradients; mid-strength only; strong only; 8 and 12 bins) and the relative span never exceeded 0.06. The corpus is orientationally isotropic: no image has a dominant ruling direction. Shipping it as a family axis would be dishonest, so it is kept only as an out-of-distribution tripwire with its measured range recorded here. See tools/validate_styleprint.py for the `ruled` control that proves it does move when a single edge direction is imposed."
+  },
+  "retracted_claims": [
+   "v1's |warmth| column reading +0.99 / +0.83 on the hard-seam sets did NOT reproduce. Correct per-file values are 0.00-0.16. Retracted, not tuned.",
+   "v1's sat_gap emptiness test used an absolute bin count of 0.004, which no bin in an image with thousands of pixels can ever fall below. It could never fire. Replaced by bimodality."
+  ]
+ },
+ "generated_by": "tools/asset.py 15"
+}
