@@ -1,0 +1,1218 @@
+{
+  "_readme": [
+    "Per-issue ENGINEERING spec: the numbers that make a prompt well-specified.",
+    "tools/prompts_chatgpt.py joins this with issues_chatgpt.json (art direction: register,",
+    "subject, geometry, text) and issues/table.json (title, arc, beat).",
+    "",
+    "Why a second file: issues_chatgpt.json says WHAT the image is. This file says HOW",
+    "BIG and WHERE, in numbers the generator can check. Splitting them keeps the art",
+    "direction readable as prose and the geometry auditable as arithmetic.",
+    "",
+    "Fields per issue:",
+    "  bbox    : [cx, cy, w, h] as fractions of frame width/height. cx/cy is the CENTRE",
+    "            of the subject's bounding box, not its origin. w/h are the box size.",
+    "  math    : list of measured statements. Every number here is checkable by eye on",
+    "            the finished image. These are what separate an engineered prompt from",
+    "            an adjective. Order them as a reader would verify them.",
+    "  detail  : material and light notes specific to this subject, not the register.",
+    "  neg     : extra negatives beyond the shared ones. Issue-specific only.",
+    "  palette : optional override of the register palette, as [[name, hex, share]].",
+    "            Shares must sum to 1.0.",
+    "  value   : optional override of the tonal split [shadow, mid, light, specular].",
+    "            Must sum to 1.0."
+  ],
+  "issues": {
+    "1": {
+      "bbox": [
+        0.5,
+        0.62,
+        0.86,
+        0.52
+      ],
+      "math": [
+        "Rings: exactly 11 concentric rings. Outer radius of ring k = 0.420 * 0.78^k of frame width, so the radii fall 42.0%, 32.8%, 25.5%, 19.9%, 15.6%, 12.1%, 9.5%, 7.4%, 5.7%, 4.5%, 3.5% of frame width — a 12.0:1 fall from outermost to innermost.",
+        "Centres drift 0.006 of frame width east per step, so the stack leans 0.06 east over its depth and the recession never reads as a flat bullseye.",
+        "Vanishing point at (50%, 86%) — low, so the eye falls DOWN and inward, never up.",
+        "The road is a band 0.055 of frame width entering the left edge at y=44% and leaving the right edge at y=44%. Slope exactly 0. It is horizontal in the frame; it is the RINGS that spiral, not the road."
+      ],
+      "detail": [
+        "Ring material: cut stone, quarried — each ring shows tool-chatter along its inner wall and a chipped lip on the outer edge, all following the ring's own curvature.",
+        "Light enters from the upper left at 40 degrees: ring outer walls lit, inner walls in shadow, so each ring reads as a solid with depth rather than a drawn circle.",
+        "The ground is not flat black — it carries the same engraved line-work as the rings at 40% of their frequency, so the subject never floats on a void."
+      ],
+      "neg": [
+        "no sky, no horizon line, no ground plane — the frame is rings only",
+        "no birds, no stars, no moon"
+      ]
+    },
+    "2": {
+      "bbox": [
+        0.34,
+        0.74,
+        0.085,
+        0.16
+      ],
+      "math": [
+        "Figure area = 0.085 x 0.16 = 1.36% of the frame. It must stay under a tenth of the frame; if it grows, the whole image loses its scale.",
+        "Stair: 11 treads, rise 0.062 of frame height per tread, run 0.078 of frame width. Pitch = atan(0.062/0.078) = 38.5 degrees, raking up and to the RIGHT.",
+        "Figure stands on the 3rd tread from the bottom, at (34%, 74%).",
+        "Stair vanishing point at (86%, 18%) — off-frame up-right, so the stair turns AWAY from the viewer rather than coming at them.",
+        "The last 2 treads are cut off by the right edge: the stair leaves the frame, which is what makes it turn."
+      ],
+      "detail": [
+        "Figure is a silhouette in the register's cold ink only, hood up, no face, no hands — the pose carries it.",
+        "Stair is drawn in line-work that thins with distance: full weight at the bottom tread, 30% weight at tread 8, hairline at tread 11.",
+        "The whole stair casts one soft shadow down-left, confirming a single light source at upper right."
+      ],
+      "neg": [
+        "no face, no eyes, no hands — strictly from behind",
+        "no second figure",
+        "no railing or balustrade"
+      ]
+    },
+    "3": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.58,
+        0.6
+      ],
+      "math": [
+        "Four doorways, one inside the next. Opening width of arch k = 0.580 * 0.62^k of frame width: 58.0%, 36.0%, 22.3%, 13.8% — each one 62% of the one outside it.",
+        "Opening height follows the same ratio: 0.660 * 0.62^k = 66.0%, 40.9%, 25.4%, 15.7% of frame height.",
+        "Centre of arch k drifts 0.020 of frame width east per step: 50%, 52%, 54%, 56%. The tunnel is therefore NOT concentric — it leans, which is what makes it ruinous rather than schematic.",
+        "Depth cue is tonal, not linear: each successive arch is 22% darker than the one in front of it, so four arches occupy four distinct value bands."
+      ],
+      "detail": [
+        "Each arch is broken differently: arch 1 intact at the crown, arch 2 missing its upper-left voussoir, arch 3 collapsed to a springer on the right, arch 4 a fragment of jamb only.",
+        "The stone between arches is coursed masonry, courses running level, so the arches are cut INTO the wall rather than built from it.",
+        "Grit and fallen blocks collect at the base of each arch, thinning inward — debris also obeys the 0.62 ratio."
+      ],
+      "neg": [
+        "no figure anywhere — this image has no one in it",
+        "no light source visible",
+        "no readable inscription on the stone"
+      ]
+    },
+    "4": {
+      "bbox": [
+        0.5,
+        0.55,
+        0.62,
+        0.6
+      ],
+      "math": [
+        "The opening is built from TWO arcs of UNEQUAL radius: left arc radius 0.310 of frame width centred at (36.5%, 55%); right arc radius 0.240 centred at (64.5%, 55%). A 1.29:1 radius ratio.",
+        "The two arcs intersect twice, 0.36 of frame width apart, and the opening is the lens between them: 0.18 wide at its widest, apex 0.44 of frame height above the spring line.",
+        "The opening's own axis is tilted 11 degrees off vertical, apex at (50%, 42%).",
+        "No mirror line exists anywhere in the frame: for every element at (x, y) there is no matching element at (1-x, y), and the minimum left-right asymmetry is 0.04 of frame width."
+      ],
+      "detail": [
+        "The frame is heavy cut stone: 0.08 of frame width thick, with a chamfered inner reveal that catches light on one side and drops to black on the other.",
+        "Inside the opening: pure void, no depth, no second room, no glow. The opening is the absence, not a window.",
+        "Beyond the frame the wall is coursed and weathered; within it the stone is dressed and precise. That contrast is the whole image."
+      ],
+      "neg": [
+        "no handle, no hinge, no door leaf",
+        "no light inside the opening",
+        "no symmetry of any kind"
+      ]
+    },
+    "5": {
+      "bbox": [
+        0.5,
+        0.55,
+        0.42,
+        0.44
+      ],
+      "math": [
+        "Mirror axis at exactly x = 50.0%. Reflecting anything left of it gives its twin right of it, congruent to within 0 — a perfect bilateral mirror, no tolerance.",
+        "The chair's seat spans 0.21 of frame width either side of the axis; total silhouette 0.42 wide by 0.44 high, centred at (50%, 55%).",
+        "Seam width 0: the transition at the axis is a hard cut with no gradient band of any width.",
+        "Three details are deliberately seeded out of register — two on the left, one on the right — so the reflection does not fully close and the object stops being an object."
+      ],
+      "detail": [
+        "An ordinary wooden chair: four legs, seat, slatted back, nothing special about it. Its plainness is the point.",
+        "Wood grain follows the real construction: vertical on the legs, horizontal on the seat rails.",
+        "Cast shadow beneath it, mirrored too, so the shadow confirms the geometry rather than explaining it."
+      ],
+      "neg": [
+        "no ornament on the chair",
+        "no second chair",
+        "no human figure",
+        "no gradient across the seam"
+      ]
+    },
+    "6": {
+      "bbox": [
+        0.32,
+        0.9,
+        0.05,
+        0.09
+      ],
+      "math": [
+        "Figure occupies 0.05 x 0.09 = 0.45% of the frame — the smallest subject in the series. It must not be enlarged for legibility; its smallness is the image.",
+        "Tower occupies the full frame width at the top and runs from y=0% down to y=80%: 0.80 of frame height against the figure's 0.09 — a scale ratio of 8.9:1.",
+        "The figure is placed at 32% across, 90% down — low, off-centre, corner-weighted — and reaches up and slightly right.",
+        "Detail budget: the figure is a clean silhouette with no interior detail at all. 100% of the rendered detail budget goes to the tower."
+      ],
+      "detail": [
+        "Tower is masonry: courses, corbelled stages, a narrowing profile, and a top that exits the frame so its height is unknowable.",
+        "Light rakes the tower from the upper right, catching every course edge; the figure is entirely in the tower's shadow.",
+        "The tower's face has depth in shadow — recesses, a narrow window slit, nothing lit."
+      ],
+      "neg": [
+        "no face on the figure, no gesture detail",
+        "no second figure",
+        "no sky detail, no clouds",
+        "no ground, no horizon"
+      ]
+    },
+    "7": {
+      "bbox": [
+        0.5,
+        0.52,
+        0.62,
+        0.62
+      ],
+      "math": [
+        "Two storks, seam at exactly x = 50.0%, hard edge, 0 gradient.",
+        "Each stork 0.28 wide by 0.62 high, centres at (34%, 52%) and (66%, 52%) — 0.32 of frame width separates their centres, so their beaks cross the axis and overlap by 0.06.",
+        "Beak tips converge to points 0.16 apart: (42%, 44%) and (58%, 44%). They aim at each other and do not touch.",
+        "Ink-area split is 62% cold / 38% hot. The cold side is heavier, so the pair reads as arguing rather than balanced."
+      ],
+      "detail": [
+        "Long legs, long neck, heavy dagger beak — drawn as line-work with the neck's curve doubled on the inside to show tension.",
+        "Cold side: cyan line-work, low value, the body mostly in shadow. Hot side: magenta and ember, high value, rim-lit along the back.",
+        "Feather detail is three strokes per body, not more; the birds must read as two shapes arguing, not as two illustrations."
+      ],
+      "neg": [
+        "no wings spread into display — the beaks do the talking",
+        "no ground line",
+        "no mirror gradient"
+      ]
+    },
+    "8": {
+      "bbox": [
+        0.5,
+        0.48,
+        0.86,
+        0.7
+      ],
+      "math": [
+        "Split axis at exactly x = 50.0%. Left half 0.46 of frame width, right half 0.46, seam 0 wide, hard cut, no gradient and no blend zone.",
+        "Form: 0.86 wide by 0.70 high, centred at (50%, 48%), bilaterally symmetric to within 0 — this is the series' signature look and it is exact, not approximate.",
+        "Colour temperature divides 1:1 by area. Every square millimetre left of the axis is cold; every one right of it is hot. No shared ink.",
+        "Folds: 9 convolutions per hemisphere, mirrored, so the whole form reads as one brain-like structure and not as two unrelated shapes.",
+        "Interior structure: 3 nested chambers per side, mirrored, opening toward the seam."
+      ],
+      "detail": [
+        "Ornate and organic at once: the outline is engraved line-work, the chambers are engraved line-work, and the whole thing has the density of a tattoo flash rather than a diagram.",
+        "Cold side glows from inside: cyan light source within the chambers, no external key.",
+        "Hot side burns from outside: ember light on the outer convolutions, magenta in the recesses.",
+        "The seam is the brightest line in the image — a hairline of both temperatures meeting, never crossing."
+      ],
+      "neg": [
+        "no neural-network node diagram, no circles-and-lines",
+        "no text, no labels",
+        "no third colour anywhere"
+      ]
+    },
+    "9": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.62,
+        0.3
+      ],
+      "math": [
+        "Exactly 640 component keys in a brick lattice of 40 columns by 16 rows. Each component is 0.0155 of frame width wide and 0.0188 of frame height tall, laid with a half-key offset on alternate rows.",
+        "At 200 px the frame is 200 px wide, so each component is 3.1 px wide — below the threshold where a key reads as a key. The macro form is readable only at full size and dissolves on approach.",
+        "Macro silhouette is unmistakably a key: bow 0.18 of frame height at the left, shank 0.44 long, ward teeth 0.09 deep at the right.",
+        "Every component is identical: same angle, same length, same bow. No two differ by more than 0.002 of frame width."
+      ],
+      "detail": [
+        "Each component key is itself a real key — bow, shank, bit, ward — drawn in miniature line-work at a density of about 6 strokes each.",
+        "Machined finish: every component catches the same single light at the same angle, so the macro form gains a metallic gradient from uniformity alone.",
+        "Cast shadow of the whole assembly falls down-right; the shadows of the components fall down-left, which is what makes the mass read as built from parts."
+      ],
+      "neg": [
+        "no component may be unique or hand-varied",
+        "no gears, no cogs, no springs",
+        "no text or stamped markings"
+      ]
+    },
+    "10": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.82,
+        0.79
+      ],
+      "math": [
+        "Panel grid: 3 columns by 2 rows. Outer margin 0.055 of frame width; gutters 0.035 between panels and to the frame edge.",
+        "Panel size = ((1 - 2*0.055) - 2*0.035) / 3 = 0.2733 wide, and ((1 - 2*0.055) - 0.035) / 2 = 0.4275 high. Every panel is exactly that size; the grid is not eyeballed.",
+        "Panel flow: row 1 left to right, then row 2 left to right. The figure walks EAST — left to right — through all six panels, so the reading direction and the travel direction agree.",
+        "Figure occupies 0.18 wide by 0.30 high inside each panel, at the same relative height in all six so the eye tracks one continuous walk.",
+        "Lettering: 3 rows per panel, each glyph 0.03 of frame height, baseline-aligned to a 0.045 grid. Shapes only — none of them spells anything."
+      ],
+      "detail": [
+        "Confident brush line with real tapering: strokes are thick on the shadow side, thin on the light, and the line thins on the far figure.",
+        "Screentone at 40% dot density for shadow, 20% for the second plane, solid black for the darkest — three tones, no gradients.",
+        "The paper is cream and slightly warm; the ink is true black with no brown in it."
+      ],
+      "neg": [
+        "no word may be readable in any panel",
+        "no speech balloon, no caption box",
+        "no accent colour — this page is black on cream only"
+      ],
+      "palette": [
+        [
+          "cream paper",
+          "#F2EAD6",
+          0.6
+        ],
+        [
+          "black ink",
+          "#14110E",
+          0.36
+        ],
+        [
+          "screentone 45%",
+          "#9A9086",
+          0.04
+        ]
+      ],
+      "value": [
+        0.32,
+        0.36,
+        0.24,
+        0.08
+      ]
+    },
+    "11": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.74,
+        0.78
+      ],
+      "math": [
+        "24 vertebrae. Centres follow an Archimedean spiral: r(θ) = 0.060 + 0.011 * θ where θ is in degrees, stepping 15 degrees per vertebra, k = 0..23.",
+        "Total turn 345 degrees, so the column wraps just under one full revolution. Radius grows 0.060 -> 0.415 of frame width — a 6.9:1 expansion from base to tip.",
+        "Each vertebra is 0.11 of frame width wide by 0.055 high, and each overlaps its neighbour by 0.02 so the column reads as articulated rather than stacked.",
+        "Rise is 0.024 of frame height per step, 23 steps: the column climbs 0.552 of frame height while it spirals outward."
+      ],
+      "detail": [
+        "Vertebrae are machined, not anatomical: each is a symmetric disc with a central bore and a chamfered rim, identical from the base to the tip except in size.",
+        "Lit from within: each bore is the light source, so the glow is centred in each body and falls to zero 0.028 of frame width from the bore centre.",
+        "Between vertebrae the background drops to near-black, so the light reads as discontinuous — a chain of lamps, not a glowing rope."
+      ],
+      "neg": [
+        "no skull, no ribcage, no human anatomy",
+        "no spinal cord or soft tissue",
+        "no text"
+      ]
+    },
+    "12": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.62,
+        0.62
+      ],
+      "math": [
+        "Eight figures on a circle of radius 0.30 of frame width, centred at (50%, 50%), spaced 45 degrees apart, first figure at 22.5 degrees so that NO figure sits on the vertical or horizontal axis.",
+        "Each figure 0.13 of frame width by 0.30 of frame height, standing, feet at radius 0.30, heads at radius 0.30 - 0.30.",
+        "Perfect radial repetition: the eight are congruent to within 0 — no variation in pose, height, angle, or colour.",
+        "Each figure is a closed shape with exactly ONE piece cut out of it: an aperture 0.035 wide by 0.055 high, positioned at the figure's own centre, in all eight."
+      ],
+      "detail": [
+        "Each closed shape is a glyph, not a body: a solid silhouette with flat shoulders and no head, drawn in one ink with no modelling.",
+        "The cut-out is the same colour as the ground, so it reads as light coming through rather than paint removed.",
+        "A single flat colour across all eight. No shading inside any figure; separation is by outline weight alone."
+      ],
+      "neg": [
+        "no faces on any of the eight",
+        "no variation between the eight",
+        "no connecting line, no circle drawn between them"
+      ]
+    },
+    "13": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.52,
+        0.52
+      ],
+      "math": [
+        "Exactly three wings, spaced 120 degrees apart, all rooted at a common centre with root radius 0.10 of frame width at (50%, 50%).",
+        "Each wing is 0.30 of frame width long with a chord of 0.11 — a 2.7:1 aspect — and tapers to a point.",
+        "Extension is one-twentieth PAST full: 0.95 of the maximum stroke length, missing 5%. It is caught, not at full extension and not folded.",
+        "Wing beat angle: the tip of each wing sits 0.14 of frame width from the root, so all three tips fall on the same circle of radius 0.24."
+      ],
+      "detail": [
+        "The glyph-form is a single closed body with three wings cut from it; the wings are the same ink as the body, separated by outline only.",
+        "The wing membrane carries 5 vein strokes per wing, angled back toward the root — structure, not decoration.",
+        "A faint impression in the ink behind the beat, as though the air moved: this is the only soft mark in the image."
+      ],
+      "neg": [
+        "exactly three wings — not four, not two",
+        "no bird, no insect, no anatomical wing",
+        "no motion blur across the wings"
+      ]
+    },
+    "14": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.86,
+        0.86
+      ],
+      "math": [
+        "Hub: radius 0.07 at (50%, 50%). Eight spokes run out to eight nodes on radius 0.30; node radius 0.035.",
+        "Outer ring at radius 0.42 carries 120 labels at a pitch of 2*pi*0.42/120 = 0.0220 of frame width, while each label is 0.030 wide. Labels therefore overlap their neighbours by 27% and the ring breaks into noise.",
+        "Label budget: 8 node labels plus 120 outer labels plus 18 axis captions = 146 text-shaped marks in the frame.",
+        "This is the one image in the series that is DELIBERATELY unreadable at thumbnail size. Its density is the warning, not its style."
+      ],
+      "detail": [
+        "Node faces carry simple icons; the outer ring carries labels that collide; the axis captions sit at three angles.",
+        "Everything is hairline and aligned to a 0.01 grid. Nothing is hand-drawn wobble; the chaos is entirely in the density.",
+        "A faint vignette pulls the corners down so the centre still reads, even though nothing else does."
+      ],
+      "neg": [
+        "no label may be a real word",
+        "do NOT tidy this up — the over-density is the subject",
+        "no colour beyond the register palette"
+      ]
+    },
+    "15": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.96,
+        0.9
+      ],
+      "math": [
+        "The beam runs corner to corner: enters at (2%, 96%) and exits at (98%, 6%). Its angle above horizontal = atan(0.90/0.96) = 43.2 degrees.",
+        "The beam is a cone, not a line: 0.10 of frame width at the source corner widening to 0.26 at the far corner — a 2.6:1 spread.",
+        "It strikes the glyph-form at exactly (50%, 50%), which is both the frame centre and the beam's midpoint.",
+        "Glyph-form 0.24 wide by 0.52 high, standing, centred on the strike point. It is the ONLY object in the frame the beam touches."
+      ],
+      "detail": [
+        "The light is pale wine-red, volumetric: it scatters, so its edges are soft while its core is dense. It is the only soft-edged element in an otherwise hard-edged image.",
+        "The glyph stands in the beam's path and is lit from the beam's direction, so its own shadow falls away from the viewer and is barely visible.",
+        "The ground outside the beam is near-black but not empty — engraved line-work at 30% frequency, so it holds tone without competing."
+      ],
+      "neg": [
+        "no second light source",
+        "no lens flare, no starburst",
+        "no other object in the beam"
+      ]
+    },
+    "16": {
+      "bbox": [
+        0.5,
+        0.58,
+        0.56,
+        0.44
+      ],
+      "math": [
+        "Two robed figures, each 0.26 of frame width by 0.44 of frame height, centres at (34%, 58%) and (66%, 58%).",
+        "Both tilt inward 17 degrees toward a single point between them at (50%, 60%) — the axis of each body points at that one point and nowhere else.",
+        "Contact: one hand rests on the other's chest. The contact patch is 0.05 wide by 0.06 high, and it is the ONLY place the two silhouettes touch.",
+        "The point at (50%, 60%) is where the two 17-degree axes cross. Nothing else in the frame shares that coordinate."
+      ],
+      "detail": [
+        "Robe folds fall vertically from the shoulders and gather at the contact point, so the drapery itself points at what matters.",
+        "Monochrome, near-photographic modelling: 7 value steps across each robe, and the two robes are lit from opposite sides so their shared edge is the brightest line in the image.",
+        "Gold construction overlays the pair — one thin circle through both heads, one rule along the 17-degree axis."
+      ],
+      "neg": [
+        "no faces — both heads are bowed and closed",
+        "no third figure",
+        "no background incident, no floor line"
+      ]
+    },
+    "17": {
+      "bbox": [
+        0.47,
+        0.58,
+        0.52,
+        0.5
+      ],
+      "math": [
+        "The holder: 0.11 wide by 0.20 high at (38%, 66%). The glyph-form it holds: 0.26 wide by 0.34 high at (56%, 52%). They are different sizes; the figure is calm and the thing it holds is the subject.",
+        "Decay: exactly 22 fragments shed from the glyph's outer band, defined as everything more than 0.06 of the glyph's width from its outline.",
+        "Fragment sizes run 0.010 to 0.045 of frame width. Fragment count falls with distance from the glyph: 9 in the first 0.06 of travel, 7 in the next, 6 in the last.",
+        "The glyph's CORE — everything inside that 0.06 band — is fully intact and fully solid. Decay starts only at the edges."
+      ],
+      "detail": [
+        "The fragments are pieces OF the glyph — the same ink, the same line-work, the same shapes it was made of — not new objects.",
+        "They rotate as they travel, each one at a different angle, so the loss reads as disintegration rather than as a spray.",
+        "The figure's hands and posture are steady and closed. Nothing about the figure suggests panic; the danger is entirely in what it holds."
+      ],
+      "neg": [
+        "the decay must not look like fire, smoke, or sparks",
+        "no explosion",
+        "no second figure",
+        "no face on the holder"
+      ]
+    },
+    "18": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.62,
+        0.44
+      ],
+      "math": [
+        "One eye-form: 0.62 of frame width by 0.44 of frame height, centred at (50%, 50%). Exactly four pupils.",
+        "Pupils sit on a 2x2 lattice, spacing 0.19 wide by 0.15 high, pupil radius 0.075 — centres at (40.5%, 42.5%), (59.5%, 42.5%), (40.5%, 57.5%), (59.5%, 57.5%).",
+        "Each pupil shows a different horizontal band of the SAME scene: the four bands are y = 30-36%, 36-42%, 48-54% and 60-66% of frame height, so they are stacked, level, and never overlapping.",
+        "The pupil circles touch the iris rim at exactly one point each, tangent, not intersecting."
+      ],
+      "detail": [
+        "The iris and sclera are drawn in line-work, hard-edged, no wet highlight — this is an engraved eye, not a photographic one.",
+        "Inside each pupil the band is a compressed strip of the same engraved world, one colour temperature per band: cyan, pale blue, magenta, ember.",
+        "The lash line is the heaviest stroke in the image and the only place the line-work doubles."
+      ],
+      "neg": [
+        "exactly four pupils",
+        "no eyelashes beyond the one lash line",
+        "no third colour in the pupils",
+        "no face around the eye"
+      ]
+    },
+    "19": {
+      "bbox": [
+        0.5,
+        0.52,
+        0.22,
+        0.56
+      ],
+      "math": [
+        "The void is a standing-person shape: 0.22 of frame width by 0.56 of frame height, centred at (50%, 52%) — head, shoulders, body, no limbs.",
+        "Inside the void, absolute luminance 0.00 with NO texture of any kind: no noise, no dots, no gradient, no dust, no grain. Sample it and every pixel reads 0. This is testable and it is the image.",
+        "Ring of light: outer radius 0.30, ring thickness 0.045, so the lit band runs from radius 0.255 to 0.300.",
+        "Glow beyond the ring falls to zero over a further 0.09 of frame width. Total lit-plus-glow radius 0.39; void-plus-ring-plus-glow occupies 0.48 of the frame area."
+      ],
+      "detail": [
+        "The light is cold: cyan at the ring's inner edge moving to pale blue at its outer, and it is the only light in the image.",
+        "Everything outside the glow is engraved line-work at low contrast — present enough to hold the frame, never enough to compete.",
+        "The void's edge is razor-sharp against the glow, with no feather. A soft edge would read as smoke; a hard edge reads as an absence."
+      ],
+      "neg": [
+        "no figure inside the void",
+        "no arms, no legs",
+        "nothing at all inside the void — not even grain",
+        "no warm colour"
+      ]
+    },
+    "20": {
+      "bbox": [
+        0.5,
+        0.48,
+        0.24,
+        0.3
+      ],
+      "math": [
+        "One rose, dead centre at (50%, 48%), 0.24 of frame width by 0.30 of frame height. This is the ONE cover in the series that is dead-centre, and it is deliberate.",
+        "Value ladder: 7 discrete steps from 0.02 (deepest petal shadow) to 0.98 (specular on the top petal). No continuous gradient — 7 tones, hard boundaries between them, like a duotone engraving.",
+        "Perspective grid: horizon at y = 62%, one-point, 9 verticals converging on (50%, 62%), spaced 0.11 of frame width at the near edge and compressing toward the vanishing point.",
+        "Cast shadow falls down-LEFT (away from the register's usual key), offset 0.06 of frame width from the stem. It is soft at 0.02 of frame width."
+      ],
+      "detail": [
+        "Petals are individually drawn — 14 outer, 9 inner, each with its own edge and its own value step. The bloom is real, not a texture.",
+        "Two thorns on the stem, one leaf, both fully resolved. The plant is a plant, drawn by someone who has drawn plants.",
+        "Monochrome warm-grey subject on a near-black ground, with the register's gold frame and gold construction over it."
+      ],
+      "neg": [
+        "no vase, no water, no table",
+        "no second flower",
+        "no dew drops or sparkle effects",
+        "no colour in the rose itself"
+      ]
+    },
+    "21": {
+      "bbox": [
+        0.5,
+        0.52,
+        0.86,
+        0.6
+      ],
+      "math": [
+        "Six figures, heights 0.24, 0.34, 0.28, 0.32, 0.26, 0.30 of frame height — deliberately unequal, so the cast has no rhythm.",
+        "Body axes at six different angles spanning 62 degrees total: 0, 12, 25, 37, 50, 62 degrees. No two share an angle.",
+        "Minimum separation between any two figure centres 0.13 of frame width, so no two figures can be read as a pair or a group.",
+        "All six face EAST — all six noses and leading shoulders point in the same direction. The shared direction is what makes six strangers one scene."
+      ],
+      "detail": [
+        "Flat vector bodies: solid fills, no outline, no modelling. Every figure is one flat colour and the six colours are drawn from the register palette.",
+        "Each is caught mid-action at the same instant, so limbs are extended at incompatible angles and nothing is at rest.",
+        "No ground plane. The six float on the engraved ground, which carries line-work at 25% frequency."
+      ],
+      "neg": [
+        "no two figures may share a pose or an angle",
+        "no ground line, no horizon",
+        "no faces — figures are 0.24-0.34 high and faceless"
+      ]
+    },
+    "22": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.62,
+        0.52
+      ],
+      "math": [
+        "Two symbols at equal height, both 0.52 of frame height: caduceus centred at (34%, 50%), double helix at (66%, 50%).",
+        "They share ONE base plinth 0.30 of frame width by 0.07 high, its top edge at y = 80%. Neither symbol floats and neither stands alone.",
+        "Equal finish: both are drawn with the same stroke weight (0.004 of frame width), the same contour-pass count (9), and the same level of detail. Neither symbol is more resolved than the other.",
+        "Horizontal centre-to-centre distance 0.32 of frame width, so they stand side by side rather than overlapping."
+      ],
+      "detail": [
+        "Both symbols are drawn in full, in the tradition of engraved scientific plates: consistent line weight, no stylisation, no modern simplification.",
+        "The caduceus has 2 wings, 2 snakes crossing 7 times, and a staff; the helix has 2 strands crossing 11 times over 0.52 of frame height.",
+        "Both are near-photographic in their modelling — cylindrical shading on the staff, refracted shading where the strands pass.",
+        "Gold construction overlays both: one circle through both tops, one baseline along the plinth."
+      ],
+      "neg": [
+        "no modern medical iconography, no simplified glyph versions",
+        "no text, no labels",
+        "no third symbol"
+      ]
+    },
+    "23": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.86,
+        0.86
+      ],
+      "math": [
+        "Filigree field fills 0.86 of frame width, inset from the gold frame by 0.07. The remaining 0.07 is the frame and nothing else.",
+        "Three strand pitches — 0.030, 0.055 and 0.090 of frame width — interlace in a 4-fold symmetric weave about (50%, 50%). The three pitches are what make it read as woven rather than as noise.",
+        "Symmetry: 4-fold. Reflect or rotate any element about the centre and its twin is present to within 0.",
+        "Representational content: exactly zero. No figure, no object, no face, no ground plane, no horizon, no negative-space shape that a viewer could resolve into a thing."
+      ],
+      "detail": [
+        "Each strand is an engraved line of constant weight that passes OVER one neighbour and UNDER the next, and the crossings are drawn so the over/under is unambiguous.",
+        "Line-work density at the register's high frequency, but every stroke is part of the weave — there is no filler hatching.",
+        "Gold on near-black with a warm crimson underlayer at 20% density in the deepest interstices, so the weave has depth without shading."
+      ],
+      "neg": [
+        "nothing must be depictable — if a viewer can name what the shape is, it has failed",
+        "no central medallion, no boss, no focal point",
+        "no empty area larger than 0.09 of frame width"
+      ]
+    },
+    "24": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.52,
+        0.34
+      ],
+      "math": [
+        "Gold double rule, inset 0.045 and 0.062 of frame width from the frame edge. Corner ornaments 0.09 x 0.09 at all four corners.",
+        "Cartouche: 0.52 of frame width by 0.34 of frame height, centred at (50%, 50%), with a 0.010 gold rule around it.",
+        "The cartouche interior is EMPTY: luminance varies by less than 0.02 across the whole 0.52 x 0.34 field. It is a flat field, not a faded image and not a faint suggestion.",
+        "The blank cartouche is the largest single area in the frame at 17.7% of its area, and nothing occupies any of it."
+      ],
+      "detail": [
+        "The rule is engraved gold with a real bevel: lit on the upper-left edge, shadowed on the lower-right, so the frame has thickness.",
+        "The engraved background continues BEHIND the cartouche at half strength, so the cartouche reads as a plate laid over the page rather than a hole cut in it.",
+        "Scattered gold numerals and equations texture the field around the cartouche — meaningless, suggestive, never resolving into a readable word."
+      ],
+      "neg": [
+        "the cartouche must be completely empty",
+        "no signature, no inscription, no pencil ghost",
+        "no name, no number, no monogram anywhere"
+      ]
+    },
+    "25": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.6,
+        0.6
+      ],
+      "math": [
+        "Three concentric dials sharing the centre (50%, 50%): radii 0.10, 0.20 and 0.30 of frame width. A 3:1 ratio between outer and inner.",
+        "Needle: 0.28 of frame width long, 0.006 wide, resting at 41 degrees from vertical, pivoting on the exact centre.",
+        "Outer scale: 60 major ticks at 6-degree pitch, each 0.018 of frame width long; 300 minor ticks at 1.2-degree pitch, each 0.008 long. 360 ticks total.",
+        "Ticks only. Zero glyphs — not numeral-shaped, not letter-shaped, not even decorative. Every mark on every scale is a stroke of constant width."
+      ],
+      "detail": [
+        "The instrument is built like real equipment: bevelled dial rims with a highlight arc on the upper left, recessed faces, a shadow under each rim lip.",
+        "Each dial face is a flat tint with the register's faint grid showing through at 15% — the grid is part of the object, not a background.",
+        "The needle is the only element that casts a shadow, and it falls down-right across the outer dial."
+      ],
+      "neg": [
+        "no numbers, no letters, no digits anywhere on any dial",
+        "no brand name, no model number",
+        "no more than three dials"
+      ]
+    },
+    "26": {
+      "bbox": [
+        0.5,
+        0.48,
+        0.58,
+        0.58
+      ],
+      "math": [
+        "Eight nodes on a circle of radius 0.28 of frame width centred at (50%, 48%), spaced 45 degrees apart, first at 0 degrees.",
+        "Node radius 0.055. Spokes 0.005 of frame width wide running from the core rim to each node centre.",
+        "Core: radius 0.09 at the exact centre, and it is EMPTY — nothing inside it, no icon, no label, no fill.",
+        "Node faces are BLANK: zero marks on all eight. The layout is the deliverable; the labels are the typesetter's job."
+      ],
+      "detail": [
+        "Each node is a circle outlined in one bright colour with a 2px-equivalent rim and a completely clear interior.",
+        "Faint concentric rings behind the node ring at radius 0.20 and 0.36, at 20% contrast — depth, not structure.",
+        "Corner tick marks at the frame edge and a faint vignette, so the diagram sits on a ground rather than floating."
+      ],
+      "neg": [
+        "every node face must be blank",
+        "the core must be empty",
+        "no caption block, no title, no year"
+      ]
+    },
+    "27": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.94,
+        0.94
+      ],
+      "math": [
+        "Nine cells, 3x3. Outer margin 0.030 of frame width, gutters 0.020. Cell size = ((1 - 0.060) - 2*0.020)/3 = 0.2900 wide, and 0.2900 high. The grid is arithmetically even.",
+        "Outline weight 0.014 of frame width, and it VARIES by up to 35% from cell to cell (0.009 to 0.019). Constant weight would read as precise; varying weight reads as badly hand-made.",
+        "Fill: flat mustard at 100%, no gradient, no highlight, no shadow. Fill covers 100% of each cell interior.",
+        "Structural correctness: 3 rows, 4 connector stubs, 2 return paths, all in the right places. The structure is right; the execution is not."
+      ],
+      "detail": [
+        "Square corners everywhere — no rounding, no bevelling, no gradients, nothing that a competent draughtsman would add.",
+        "The mustard is slightly dirty, as if mixed by hand and not quite consistent between cells.",
+        "This is the one image in the series that is deliberately BAD. Do not improve it. Ugly and structurally correct is the entire argument."
+      ],
+      "neg": [
+        "do NOT make this look good — clumsy execution is the subject",
+        "no gradients, no shadows, no rounded corners, no bevels",
+        "no colour other than mustard, the outline ink, and the ground"
+      ]
+    },
+    "28": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.72,
+        0.62
+      ],
+      "math": [
+        "Four badge callouts, each 0.20 of frame width by 0.08 of frame height, in the frame's corners: (18%, 18%), (82%, 18%), (18%, 82%), (82%, 82%).",
+        "Four leader lines, 0.004 of frame width wide, running from each badge to an empty box 0.10 wide by 0.07 high at (38%, 34%), (62%, 34%), (38%, 66%), (62%, 66%).",
+        "Every leader line terminates ON an empty box. No line ends on a part, and every box it ends on has nothing in it.",
+        "Badge interiors are uniform: zero marks, zero text, zero glyphs. All four are equally empty."
+      ],
+      "detail": [
+        "The assembly beneath is real: two mating plates, four bolt bosses, a gasket line — drawn properly, in the register's line-work.",
+        "Badges are drawn as real badges: rounded rectangles with a hairline border and a drop shadow, which makes their emptiness conspicuous.",
+        "The empty boxes are white and flat — brighter than anything else in the frame, so the eye goes to the failure."
+      ],
+      "neg": [
+        "no badge may contain text",
+        "no leader line may terminate on a part",
+        "no part may be labelled anywhere"
+      ]
+    },
+    "29": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.68,
+        0.68
+      ],
+      "math": [
+        "One polyhedron, 0.34 of frame width across, centred at (50%, 50%). Eight wheels on a circle of radius 0.30, spaced 45 degrees apart, first at 22.5 degrees.",
+        "Wheel radius 0.065. Each wheel is a circle in outline with 8 spokes, drawn in line-work and nothing else.",
+        "Polyhedron has ZERO flat fill: it is pure line-work, all edges visible, no hidden-line removal.",
+        "Nothing else in the frame: no key, no legend, no title block, no dimension arrows, no callouts. 1 object, 0 annotations. This is the reusable version and it stays reusable."
+      ],
+      "detail": [
+        "Pure line-work on the dark ground: every line the same weight, no fill, no shading, no colour variation.",
+        "The polyhedron's edges are drawn as construction lines extending 0.02 past the vertices, which is what makes it read as a drawing rather than an object.",
+        "The wheels are drawn as circles in perspective — ellipses — so the ring reads as a ring and not as a flat halo."
+      ],
+      "neg": [
+        "no key, no legend, no title block, no caption",
+        "no dimension lines or arrows",
+        "no fill on the polyhedron"
+      ]
+    },
+    "30": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.76,
+        0.4
+      ],
+      "math": [
+        "The word AMPHETAMEMES: 12 characters, all caps, cap height 0.085 of frame height.",
+        "Letter width 0.0562 of frame width — 0.66 of the cap height, the ratio of a roman capital — with tracking +0.008 between letters. Total word width = 12*0.0562 + 11*0.008 = 0.674 + 0.088 = 0.762 of frame width — check it spans 76% and no more.",
+        "Centred horizontally: first letter starts at x = 11.9%, last ends at x = 88.1%. Baseline at y = 54.5%, cap line at y = 46.0%.",
+        "This is the ONLY text in the image. Total text-shaped marks in the frame: 12. Zero others — not in the border, not in the corners, not in the background numerals."
+      ],
+      "detail": [
+        "Engraved roman capitals with real stroke modulation: stems 0.008 wide, horizontals 0.006, serifs bracketed. Letterforms are cut, not typeset.",
+        "The word sits in the cartouche's centre, on the same axis as the gold frame, so the frame and the word share one centre.",
+        "The engraved background numerals and equations continue around the word but must not crowd it — a clear band of 0.04 of frame height above the cap line and below the baseline."
+      ],
+      "neg": [
+        "AMPHETAMEMES is the only text — no subtitle, no issue number, no date, no publisher mark",
+        "no letters behind the word",
+        "no misspelling: spell it A-M-P-H-E-T-A-M-E-M-E-S"
+      ]
+    },
+    "31": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.82,
+        0.72
+      ],
+      "math": [
+        "Eight swatches in a column at x = 14-21%, each 0.07 of frame width by 0.05 high, on a vertical pitch of 0.075. Column top at y = 18%, so swatch i's centre sits at y = 20.5% + i*7.5%.",
+        "Eight index numerals 1 to 8 at cap height 0.030 of frame height, at x = 24%, baseline-aligned to each swatch's centre.",
+        "The eight-node ring sits on the right: centre (66%, 50%), radius 0.26, nodes at 45-degree intervals, node i at angle i*45 degrees.",
+        "Swatch i, numeral i and node i all sit on one shared 0.075 vertical pitch. Misregistration greater than 0.004 of frame height breaks the rule — align them exactly."
+      ],
+      "detail": [
+        "Swatches are flat fills with a hairline border, drawn to print-legibility: each colour is a real pigment value, not a screen.",
+        "The ring on the right uses the same eight colours as its node outlines, so the key genuinely keys the diagram.",
+        "Leader lines from each numeral to its node are 0.0025 of frame width — the thinnest line in the frame, and still straight."
+      ],
+      "neg": [
+        "the only text is the numerals 1 to 8",
+        "no word, no header, no title, no caption anywhere on the sheet",
+        "no swatch may be out of order with its node"
+      ]
+    },
+    "32": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.82,
+        0.82
+      ],
+      "math": [
+        "Filigree field 0.82 of frame width, 4-fold symmetric about (50%, 50%), strands at two pitches only — 0.035 and 0.070 — so the weave is simpler than issue 23's and therefore more graceful.",
+        "One region, 0.14 wide by 0.11 high, in the lower-left quadrant at (36%, 66%), resolves just far enough to suggest a standing figure — and then stops. Shoulder and hood edge, no face, no limbs, no object held.",
+        "That region is the ONLY quasi-representational area in the frame. The other 0.82 x 0.82 minus 0.0154 of it carries no suggestible shape at all.",
+        "Density inside that region: 0.34 of its area is line-work, just below the threshold at which a shape commits to being a thing."
+      ],
+      "detail": [
+        "Violet and gold only, with the gold threads passing over the violet, never the reverse.",
+        "The lower-left region is drawn with the same line weight as the rest — nothing about it announces itself except that it almost resolves.",
+        "Line-work density is lower than issue 23's throughout: this panel is prettier and emptier, and that is the difference."
+      ],
+      "neg": [
+        "the suggested figure must never resolve — no face, no hands, no legs",
+        "no focal object, no ground plane, no horizon",
+        "do not make the filigree denser; lower density is correct here"
+      ]
+    },
+    "33": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.9,
+        0.84
+      ],
+      "math": [
+        "Three rows of panels. Row 1: 4 panels. Row 2: 2 panels, the left one double-width. Row 3: 3 panels. Total 9 panels.",
+        "Outer margin 0.050 of frame width, gutters 0.030 horizontally and 0.026 vertically. Row heights: 0.280, 0.280, 0.280 of frame height.",
+        "Beat sequence, read left to right then top to bottom: whirl, hand, small figure, tunnel. Four beats across nine panels — the hand gets one panel, the whirl two, the figure one, the tunnel five.",
+        "Magenta accent covers 0.055 of the frame area in total, in three separate placements — never more than 0.025 in any one panel.",
+        "This is the only issue in the series that is already a finished comic PAGE rather than a cover."
+      ],
+      "detail": [
+        "Cream paper, black ink, one magenta accent, exactly as the register requires.",
+        "Real brush inking: stroke weight follows form, and the screentone is a 45% dot over the shadow shapes only.",
+        "The four beats are drawn as four genuinely different images, not as one image repeated with variations."
+      ],
+      "neg": [
+        "no word may be readable in any panel",
+        "no speech balloon",
+        "no page number, no corner box, no logo"
+      ]
+    },
+    "34": {
+      "bbox": [
+        0.5,
+        0.78,
+        0.1,
+        0.17
+      ],
+      "math": [
+        "The ground is INVERTED: cream-white paper at high luminance, magenta as the only ink. This is the only issue in the series on a pale ground.",
+        "Figure 0.10 of frame width by 0.17 high, centred at (50%, 78%), standing alone, seen from behind.",
+        "Eye-form: 0.20 of frame width by 0.09 high, centred at (50%, 36%) — deviation from the figure's own vertical axis is exactly 0. The symbol and the head share one axis, which is what makes the pair a single statement.",
+        "The empty gap between the eye's lower edge (y = 31.5%) and the figure's head (y = 69.5%) is 0.38 of frame height and is completely empty. The distance is the image."
+      ],
+      "detail": [
+        "Figure in magenta ink only, a closed silhouette with a hood — no face, no hands.",
+        "Eye-form is a single almond in magenta line-work with a filled pupil, drawn at the same weight as the figure.",
+        "Because the ground is pale, the line-work frequency drops to 50% of the register's usual: the image is quieter than its siblings and must stay that way."
+      ],
+      "neg": [
+        "no near-black anywhere — the ground stays pale",
+        "no second figure",
+        "nothing at all in the gap between eye and head",
+        "no text"
+      ]
+    },
+    "35": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.1,
+        0.85
+      ],
+      "math": [
+        "23 chevrons stacked vertically on a pitch of 0.037 of frame height, filling 23*0.037 = 0.851 of frame height. The column runs from y = 7.5% to y = 92.5%.",
+        "The column's axis is VERTICAL at x = 50%. Chevron width 0.10 of frame width, height 0.024, arms at 38 degrees above horizontal.",
+        "Every one of the 23 chevrons points EAST: tip at +x, tail at -x, arm angle -38 degrees on the upper edge and +38 on the lower. Zero exceptions across all 23.",
+        "This is the deliberate test of canon rule 1. The axis is vertical and every road segment still points east, so rule 1 is VISIBLE rather than violated."
+      ],
+      "detail": [
+        "Chevrons are drawn as double strokes: a heavy inner stroke and a hairline outer, so the stack has weight without becoming solid.",
+        "Alternating chevrons carry a faint magenta and a faint cyan, so the column has a slow pulse without any of them changing direction.",
+        "The ground is near-black with engraved line-work at 20% frequency, so the column has something to be vertical against."
+      ],
+      "neg": [
+        "all 23 chevrons must point east — not one may point north, west, or down",
+        "no vertical arrow",
+        "no text, no numerals in the column"
+      ]
+    },
+    "36": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.66,
+        0.66
+      ],
+      "math": [
+        "Two outlined triangles on a common circumcircle of radius 0.30 centred at (50%, 50%): one upright with vertices at 90, 210 and 330 degrees; one inverted with vertices at 270, 30 and 150 degrees.",
+        "Six of the seven points therefore sit ON the circumcircle, at 30-degree intervals. They are correct and they are not the point of the image.",
+        "The SEVENTH point is the inverted triangle's lower vertex, displaced 0.070 of frame width EAST of its correct position at 270 degrees. It lands at 3 degrees off the circle — visibly, measurably wrong.",
+        "Every edge is a 0.006 of frame width outline. No fill on either triangle, no intersection shading, no double-line at the crossings."
+      ],
+      "detail": [
+        "The seven points read at a glance because the first six are so correct that the eye assumes the seventh is too.",
+        "Outlines are engraved-weight and constant. The displaced vertex is drawn in exactly the same weight as the other six — the mistake is positional, never stylistic.",
+        "The ground is near-black with the faintest engraved line-work, so the frame is still and empty around the geometry."
+      ],
+      "neg": [
+        "exactly seven points — the seventh must be off-axis by 0.070",
+        "no fill, no hatching inside either triangle",
+        "no text, no annotation of the geometry"
+      ]
+    },
+    "37": {
+      "bbox": [
+        0.5,
+        0.54,
+        0.36,
+        0.52
+      ],
+      "math": [
+        "STROKE BUDGET: 34 contour passes for the entire image. This is the fewest of all 48 covers and the sparsest line-work in the series. Do not add strokes to improve it.",
+        "Suit 0.36 of frame width by 0.52 of frame height, centred at (50%, 54%), shoulders at y = 32%, hem at y = 78%.",
+        "Hanger hook: a single arc of radius 0.03 at (50%, 16%), and the hook is drawn with ONE stroke. The hanger itself is 3 strokes.",
+        "The hood-shaped void where a head would be: 0.11 wide by 0.15 high at (50%, 30%), filled with the ground colour. Features inside it: ZERO — not eyes, not a shadow, not a suggestion."
+      ],
+      "detail": [
+        "One confident contour per edge, no doubling, no interior lines except the two lapel strokes and the sleeve seams — 4 interior strokes total.",
+        "Lapels, collar and cuffs are indicated by the turn of the single contour, not by drawn lines. A draughtsman's economy.",
+        "The suit hangs with no body in it: the shoulders hold shape from the coat's structure alone, and the hem falls straight."
+      ],
+      "neg": [
+        "do NOT add detail — the emptiness is the quality",
+        "the head void must have no features at all",
+        "no shading, no hatching, no second colour"
+      ]
+    },
+    "38": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.62,
+        0.74
+      ],
+      "math": [
+        "The hood fills the frame: 0.62 of frame width by 0.74 of frame height, centred at (50%, 50%).",
+        "The hood is a SOLID MASS at luminance 0.01 across 0.46 of the frame area — the single largest dark shape in the series. No texture inside it, no hood opening, no interior.",
+        "Rim light: a single thin red line 0.008 of frame width wide, along the RIGHT contour only, covering 31% of that contour from y = 30% to y = 61%. The other 69% of the contour has no rim at all.",
+        "The rim is the ONLY saturated colour in the image and it occupies less than 1% of the frame area."
+      ],
+      "detail": [
+        "One dominant shape, no secondary objects, no background incident — the hood is the whole image.",
+        "The red rim is a hairline of pure light with no glow and no bloom. A glow would soften the silhouette; the silhouette must stay absolute.",
+        "The ground outside the hood is near-black with engraved line-work at 15% frequency — present only so the hood's edge has something to cut against."
+      ],
+      "neg": [
+        "no face, no hood opening, no neck, no hands",
+        "no second rim light on the left",
+        "no glow, no bloom on the rim"
+      ]
+    },
+    "39": {
+      "bbox": [
+        0.5,
+        0.74,
+        0.3,
+        0.17
+      ],
+      "math": [
+        "One eye, low in the frame: 0.30 of frame width by 0.17 of frame height, centred at (50%, 74%), looking down a corridor.",
+        "Corridor: two walls converging on a single vanishing point at (50%, 40%). Wall blue occupies 0.56 of the frame area.",
+        "Six lamps on the walls, alternating walls, on a depth pitch that compresses toward the vanishing point; each lamp 0.045 wide by 0.02 high and emitting to a radius of 0.11.",
+        "The green iris occupies 0.021 of the frame area and appears NOWHERE ELSE. It is the only third colour in the image and it is confined to the iris."
+      ],
+      "detail": [
+        "Blue and orange is the strongest pair for power, so the corridor is built from them entirely: deep blue walls, orange lamp pools on the floor and the far wall.",
+        "The lamps are the only hard light sources and each casts a visible pool; the corridor between them falls to near-black.",
+        "The eye is large enough to hold the frame's attention at 200 px — its silhouette is a single almond and its iris a single circle."
+      ],
+      "neg": [
+        "green must not appear on the walls, the floor, or the lamps",
+        "no second eye",
+        "no text"
+      ]
+    },
+    "40": {
+      "bbox": [
+        0.5,
+        0.58,
+        0.6,
+        0.34
+      ],
+      "math": [
+        "One ink only: crimson on cream paper. Second ink in the image: zero.",
+        "TONE SYSTEM: exactly 3 line weights (0.004, 0.008, 0.014 of frame width) and 4 dot densities (0%, 25%, 50%, 75%). That is 12 distinct tone values, and the image uses no others.",
+        "Road: 0.055 of frame width, entering the left edge at y = 62% and leaving the right edge at y = 62%. Slope exactly 0 — it runs east and it does not turn.",
+        "Figure: 0.09 of frame height, standing on the road at (50%, 56%), so it interrupts the road's horizontal without displacing it."
+      ],
+      "detail": [
+        "The figure is 6 strokes and nothing more: hood outline, two shoulders, two legs, one ground contact. Its smallness is the argument.",
+        "All separation is by line weight and dot density: the road is a double weight, the horizon is a 25% dot field, the figure is solid.",
+        "Cream paper is warm and slightly textured; the crimson is a single flat ink with no shading and no second pass."
+      ],
+      "neg": [
+        "no second ink, ever",
+        "no grey, no black, no additional hue",
+        "the road must stay horizontal",
+        "no more than 6 strokes on the figure"
+      ]
+    },
+    "41": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.82,
+        0.82
+      ],
+      "math": [
+        "Pure geometry. Outer amber rectangle inset 0.070 of frame width on all four sides. One inner margin rule inset 0.110.",
+        "Four corner crop marks, each 0.060 long and 0.006 wide, offset 0.040 from the frame corner.",
+        "The interior of the inner rule is 0.78 x 0.78 = 0.6084 of the frame area and it is EMPTY: zero objects, zero marks, zero texture — not even paper grain beyond a flat tint.",
+        "Stroke budget: 2 rectangles (4 strokes) + 4 crop marks (8 strokes) = 12 strokes total. That is the whole image."
+      ],
+      "detail": [
+        "Amber ink on cream paper, single ink, hairline weight — the skeleton and never the labelled version.",
+        "The rules are dead straight and dead parallel: the gap between outer rectangle and inner rule is 0.040 of frame width on all four sides, identical to within 0.002.",
+        "The paper's flat tint is the only texture. Any grain in the field is a failure of the brief."
+      ],
+      "neg": [
+        "the field must be empty — generate the skeleton, never the labelled one",
+        "no crop marks inside the frame, none in the field",
+        "no text, no numbers, no registration marks"
+      ]
+    },
+    "42": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.88,
+        0.88
+      ],
+      "math": [
+        "Measure 0.88 of frame width on all four margins, then a 12-column grid inside it: column width 0.0563, gutter 0.016, so 12*0.0563 + 11*0.016 = 0.676 + 0.176 = 0.852 — and the remaining 0.028 is the outer margin the grid does not reach.",
+        "Chrome, top to bottom: title band 0.090 of frame height at the top; year at 0.040 cap height in the top right; subtitle band 0.045 below the title; four section headers at 0.035 cap height, evenly distributed down the left column.",
+        "Blocks: topology diagram 0.52 wide by 0.30 high centred at (50%, 42%); legend 0.20 wide by 0.24 high at (26%, 76%); body copy block 0.44 wide by 0.16 high at (64%, 80%). No two blocks overlap by more than 0.004.",
+        "Real text: exactly AMPHETAMEMES in the title band, 2025 in the top right, SYSTEM ATLAS in the subtitle. Three strings, 28 characters (12 + 4 + 12). Everything else is word-SHAPED with the rhythm of language and no meaning."
+      ],
+      "detail": [
+        "The whole infographic survives on layout alone: correct grid, correct hierarchy, correct spacing, correct alignment. Remove the words and it still reads as a real document.",
+        "The topology diagram is real — 3 clusters of 4 nodes with real connections, drawn in the register's hairline cyan.",
+        "The gibberish text has real letter rhythm, real word lengths (4 to 9 letters) and real baselines; only the letters themselves are wrong. It must never resolve into a readable word."
+      ],
+      "neg": [
+        "only three real strings: AMPHETAMEMES, 2025, SYSTEM ATLAS",
+        "no other readable word or number anywhere, including the legend and the body copy",
+        "no lorem ipsum that a viewer could parse"
+      ]
+    },
+    "43": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.88,
+        0.82
+      ],
+      "math": [
+        "Exactly 30 nodes in three classes of ten: 10 circles, 10 squares, 10 triangles, in three colours.",
+        "62 edges, giving a mean degree of 2*62/30 = 4.13 per node.",
+        "Force-simulation layout: mean nearest-neighbour distance 0.11 of frame width, and 3 node pairs sit closer than 0.05. A perfectly tidy layout does NOT read as generated — the small overlaps are the signature of the simulation.",
+        "Library name Chart.js in the lower right corner at cap height 0.026, right-aligned to the 0.94 margin. It is the only text in the image."
+      ],
+      "detail": [
+        "Nodes are outlined shapes of uniform stroke weight; a few are filled at 20% to indicate class. Nothing is filled at 100%.",
+        "Edges are hairlines at 0.0025 of frame width, and 4 of them cross without a jump-over — the untidiness is the point.",
+        "Background: the register's faint concentric rings and thin grid, so the graph sits on the same ground as the rest of the series."
+      ],
+      "neg": [
+        "Chart.js is the only text — no axis labels, no title, no tick numbers, no legend text",
+        "no more than 30 nodes",
+        "do not tidy the layout"
+      ]
+    },
+    "44": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.9,
+        0.88
+      ],
+      "math": [
+        "Nine layers in cross-section, stacked vertically: each 0.072 of frame height with 0.012 gaps, so 9*0.072 + 8*0.012 = 0.648 + 0.096 = 0.744 of frame height. The stack runs from y = 12% to y = 86.4%.",
+        "Real text: LAYER 1 through LAYER 9, one per layer, 9 strings and 63 characters (9 x 7), at cap height 0.022, left-aligned at x = 10% and baseline-aligned to each layer's vertical centre. Nothing else in the frame is readable.",
+        "Rule weights: dimension rules 0.003 of frame width, leader lines 0.003, layer separators 0.005, frame border 0.008. No rule anywhere exceeds 0.008 — a heavier rule would break the drawing's grammar.",
+        "Dimension rules: 3 on the left, 2 on the bottom. Leader lines: 11, each landing on a layer boundary. Tick-marked scales in 0.012 increments along the bottom dimension rules.",
+        "Title block 0.26 wide by 0.16 high in the lower right, with 6 empty fields and no text in any of them."
+      ],
+      "detail": [
+        "Blueprint grammar, drawn correctly: extension lines offset 0.010 from the object, arrowheads at 0.008, leaders at 30 degrees to horizontal, every rule thin, straight and parallel.",
+        "Cream-orange palette, cream sheet, orange rules, deep navy line — no wash, no shading, no tonal fill anywhere.",
+        "The layers are drawn as real cross-sections: hatch-free outlines with internal detail lines, each layer distinct from its neighbours."
+      ],
+      "neg": [
+        "LAYER 1 to LAYER 9 is the only text, including inside the title block",
+        "no other dimension value, no scale number, no sheet number, no revision block text",
+        "no rule thicker than 0.008",
+        "no hand-drawn wobble on any straight rule"
+      ]
+    },
+    "45": {
+      "bbox": [
+        0.5,
+        0.54,
+        0.86,
+        0.74
+      ],
+      "math": [
+        "Nine figures of identical build, 0.11 of frame width by 0.30 of frame height each, at nine different stages of one gesture.",
+        "They are staggered along ONE diagonal from (14%, 86%) to (86%, 22%): step 0.09 east and 0.08 north per figure, so the diagonal's pitch = atan(0.08/0.09) = 41.6 degrees.",
+        "Adjacent centres are 0.1206 of frame width apart on that diagonal, which is just over one figure width — so figures overlap slightly without merging.",
+        "Occlusion budget: no single figure may be overlapped by more than 2 others. All 9 silhouettes must stay individually readable at 200 px."
+      ],
+      "detail": [
+        "Nine stages of ONE gesture, so the arm angle advances monotonically while the body's weight shifts — a sequence, not nine poses.",
+        "Figures share one build and one palette, drawn as flat shapes with an outline; the palette entry is the only thing distinguishing them.",
+        "Depth is carried by value: figure 1 at full value, each subsequent figure 12% darker, so the diagonal reads front to back as well as left to right."
+      ],
+      "neg": [
+        "no two figures may be in the same stage of the gesture",
+        "no more than 2 figures overlapped by any one",
+        "no ground line"
+      ]
+    },
+    "46": {
+      "bbox": [
+        0.5,
+        0.51,
+        0.28,
+        0.63
+      ],
+      "math": [
+        "Five slabs on a base. Slab widths taper 0.240, 0.216, 0.194, 0.175, 0.157 of frame width — each 0.9x the one below, a 1.53:1 fall from bottom to top.",
+        "Each slab is 0.100 of frame height, on a vertical pitch of 0.120, so the stack occupies 5*0.100 + 4*0.020 = 0.580 of frame height, from y = 24% to y = 82%.",
+        "Base: 0.28 of frame width by 0.06 high, top edge at y = 82%, centred at (50%, 85%).",
+        "The perched shape: 0.06 wide by 0.05 high at (50%, 19%), touching the top slab's upper edge exactly. It is a quarter of the top slab's width."
+      ],
+      "detail": [
+        "Slabs are stone: an edge bevel catching light along the top and a shadow under each overhang, so the stack has five distinct planes.",
+        "The taper is the point — a vertical stack with something on top is a spine, and the narrowing sells the height.",
+        "No ground plane, no horizon, no cast shadow on a floor. The stack stands in the frame's void."
+      ],
+      "neg": [
+        "no ground, no floor, no horizon",
+        "the slabs must taper — equal widths read as a wall",
+        "no figures, no faces on the slabs"
+      ]
+    },
+    "47": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.46,
+        0.86
+      ],
+      "math": [
+        "Trunk 0.46 of frame width, running from the bottom edge (y = 100%) to y = 14% — 0.86 of frame height. It is cropped by the frame at the base and at the crown, so its full height is unknowable.",
+        "Bark fissures: irregular vertical channels 0.008 to 0.020 of frame width wide, running the full height, count approximately 34 across the trunk's width. Nothing else draws the bark.",
+        "The face is formed BY the fissures and is never drawn on top of them: 2 eyes 0.035 wide, centres at (44%, 42%) and (56%, 42%), spacing 0.12; mouth 0.09 wide centred at (50%, 55%). Each feature is a place where fissures PART, so the face is negative space.",
+        "Zero added lines for the face: the count of drawn strokes is the count of bark fissures and nothing more.",
+        "Halo at the crown: 24 gold rays at 15-degree intervals, each 0.070 of frame width long, radiating from a 0.12-radius centre at (50%, 10%)."
+      ],
+      "detail": [
+        "Bark as face plus a halo crown equals authority. The bark is drawn first and well; the face is what the eye finds afterwards.",
+        "The trunk is lit from the upper left at 35 degrees, so the fissures on the right run into shadow and the face's right side falls away — a calm face, not a symmetric mask.",
+        "The gold rays are thin flat strokes with no glow and no gradient; the halo is an engraving convention, not a light effect."
+      ],
+      "neg": [
+        "no eyes, mouth or features drawn as separate marks — they must be the bark",
+        "no leaves, no branches, no canopy",
+        "no second face in the bark"
+      ]
+    },
+    "48": {
+      "bbox": [
+        0.5,
+        0.5,
+        0.34,
+        0.62
+      ],
+      "math": [
+        "Dead centre at (50%, 50%). Body 0.34 of frame width by 0.62 of frame height. This is the one cover in the series that is symmetrical and still, and it has to feel final.",
+        "Split axis at exactly x = 50.0%: left half cyan at 100% coverage, right half magenta-gold at 100%. Seam width 0, hard cut, no blend.",
+        "Crown of fire: 13 tongues, each 0.09 of frame width long, radiating 24 degrees apart from (50%, 19%), reaching y = 10%. Count them: 13.",
+        "Stillness budget: zero blur, zero motion lines, zero lean, zero gesture. Every edge in the image is either vertical, horizontal, or a 24-degree ray from the crown. Nothing else is permitted."
+      ],
+      "detail": [
+        "The being is symmetrical because it is one being, not two: the split is a temperature division, so the two halves are the same drawing in different light.",
+        "Crowned in fire: the 13 tongues are engraved flame-structure with hard edges, magenta-gold on the right, cyan-flame on the left.",
+        "Symmetry holds to within 0. A viewer must be able to fold the image down the centre line and have it match, which is the test of whether the thesis landed.",
+        "The ground carries engraved line-work at 30% frequency and does nothing else — the being has the frame to itself."
+      ],
+      "neg": [
+        "no motion of any kind — blur, lean, gesture, motion lines all forbidden",
+        "no text, no title",
+        "the two halves must match in shape, not only in size"
+      ]
+    }
+  }
+}

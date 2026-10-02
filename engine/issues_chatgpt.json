@@ -1,0 +1,350 @@
+{
+  "_readme": [
+    "Hand-authored per-issue art direction for the ChatGPT cover-prompt generator.",
+    "tools/prompts_chatgpt.py joins this with issues/table.json (titles, beats, palettes).",
+    "The series-level preamble, register definitions and closing constraints live in",
+    "tools/prompts_chatgpt.py so that identity is enforced in one place and cannot drift",
+    "per issue. The defect in the abandoned local-SD route was exactly this: identity was",
+    "baked into each issue file, so 4 issues shared one prompt.",
+    "",
+    "Fields per issue:",
+    "  register : A | B | C | D | E   (see .agents/skills/amph-cover-prompt/references/registers.md)",
+    "  subject  : ONE concrete focal image. Never an abstraction, never a mood word.",
+    "  geometry : the compositional trick from table.json `idea`, restated as an instruction.",
+    "  text     : \"none\" (default, rule 7 of the canon) or an object {allow:[...]} naming the",
+    "             exact strings to render, per the measured corpus finding that fake text is",
+    "             prompt-driven: name the string and it complies, leave it vague and it",
+    "             invents gibberish.",
+    "  ground   : optional override for the register's background; the register block always states one."
+  ],
+  "issues": {
+    "1": {
+      "register": "B",
+      "subject": "a single road that runs east and coils into an endless descending spiral of shrinking stone rings",
+      "geometry": "concentric rings shrinking toward a low vanishing point so the eye falls down and inward; road stays horizontal across frame, never vertical",
+      "text": "none"
+    },
+    "2": {
+      "register": "B",
+      "subject": "a small hooded figure seen strictly from behind, mid-stride, climbing a stair that turns away from the viewer",
+      "geometry": "figure occupies under a tenth of the frame, placed low and off-centre; the stair rakes diagonally up-right",
+      "text": "none"
+    },
+    "3": {
+      "register": "B",
+      "subject": "four ruined doorways nested one inside the next, receding into a tunnel of broken stone",
+      "geometry": "concentric recession: four arches, each smaller and further in, so a flat image reads as deep space",
+      "text": "none"
+    },
+    "4": {
+      "register": "B",
+      "subject": "a heavy stone doorframe with exactly one opening, built from two unequal arcs that meet off-axis",
+      "geometry": "two arcs, one opening; the portal refuses symmetry — no mirror line anywhere in the frame",
+      "text": "none"
+    },
+    "5": {
+      "register": "B",
+      "subject": "a single ordinary object — a plain chair — mirrored across a hard vertical seam so its two halves refuse to resolve",
+      "geometry": "perfect bilateral mirror across the centre line; mirrored so hard the object stops being an object",
+      "text": "none"
+    },
+    "6": {
+      "register": "B",
+      "subject": "one tiny cloaked figure from behind at the bottom edge, reaching up toward a tower that fills the entire upper frame and goes out of view",
+      "geometry": "a small figure wanting something enormous; scale contrast carries the whole story, detail only in the tower",
+      "text": "none"
+    },
+    "7": {
+      "register": "B",
+      "subject": "two storks facing each other across a hard vertical seam, one rendered in cold light and one in hot, each long beak open",
+      "geometry": "the mirror must produce two subjects arguing, not a decorative pattern; the seam is a hard edge with no gradient",
+      "text": "none"
+    },
+    "8": {
+      "register": "B",
+      "subject": "an ornate symmetrical brain-like form split down the middle: the left half rendered entirely in cold cyan line-work, the right half entirely in hot magenta and orange, meeting at one hard vertical seam",
+      "geometry": "the duotone split is the signature look of the series: one object, two colour temperatures, hard seam, perfect bilateral symmetry",
+      "text": "none",
+      "reference": "/home/kilisan/Dropbox/Lucid_Origin_Comic_cover_with_Superbrain_split_into_mirrored_a_2.jpg"
+    },
+    "9": {
+      "register": "B",
+      "subject": "one large hand-built shape — a key — assembled entirely from hundreds of tiny identical machined keys",
+      "geometry": "the macro form must be readable only at distance; zoom in and it dissolves into components",
+      "text": "none"
+    },
+    "10": {
+      "register": "D",
+      "subject": "a black-and-white comic page of six panels where a figure walks east through all six, the drawing confident and the lettering a row of meaningless glyph shapes",
+      "geometry": "a real panel grid with real gutters and screentone; the drawing is right and the words are wrong",
+      "text": "none"
+    },
+    "11": {
+      "register": "B",
+      "subject": "a spinal column of interlocking vertebrae that spirals upward and outward, each vertebra lit from within",
+      "geometry": "bones assembled along a rising spiral so the column reads as something being manufactured, not anatomically posed",
+      "text": "none"
+    },
+    "12": {
+      "register": "A",
+      "subject": "eight identical standing glyph-figures in a ring, each one a closed shape with a single piece cut out of it",
+      "geometry": "eight of the same thing in one colour reads as holy stillness; perfect radial repetition, no variation",
+      "text": "none"
+    },
+    "13": {
+      "register": "B",
+      "subject": "a glyph-form with exactly three wings, mid-beat, wings at one-twentieth past full extension",
+      "geometry": "exactly three repetitions of the wing shape, spaced 120 degrees apart, so it reads as motion rather than pattern",
+      "text": "none"
+    },
+    "14": {
+      "register": "C",
+      "subject": "a hub-and-spoke chart so dense the labels collide and the outer ring breaks into illegible noise",
+      "geometry": "this image is a warning, not a style: deliberately over-dense, unreadable at thumbnail size",
+      "text": "none"
+    },
+    "15": {
+      "register": "B",
+      "subject": "a beam of pale wine-red light crossing the frame corner to corner, striking a standing glyph-form at its exact centre",
+      "geometry": "one diagonal of light crossing the whole frame makes the image alive; the glyph is the only thing the beam touches",
+      "text": "none"
+    },
+    "16": {
+      "register": "A",
+      "subject": "two robed figures facing each other, both bent forward in reverence, one holding the other at the chest",
+      "geometry": "reverence drawn as two bodies leaning toward a single point between them; nothing else in the frame",
+      "text": "none"
+    },
+    "17": {
+      "register": "B",
+      "subject": "a small figure from behind holding a second glyph-form that is visibly disintegrating into loose fragments at its edges",
+      "geometry": "show the danger of the idea or the image reads as an advertisement; decay at the edges, figure calm and small",
+      "text": "none"
+    },
+    "18": {
+      "register": "B",
+      "subject": "a single large eye-form with exactly four pupils, each pupil showing a different horizontal band of the same scene",
+      "geometry": "extra eyes mean extra perception; each pupil a different spectral band, cyan and magenta only",
+      "text": "none"
+    },
+    "19": {
+      "register": "B",
+      "subject": "a glowing ring of light around a hole of absolute pure black shaped like a standing person",
+      "geometry": "pure black inside a glowing image is the loudest shape you can draw; the void must have no texture at all",
+      "text": "none"
+    },
+    "20": {
+      "register": "A",
+      "subject": "one ordinary rose, rendered with near-photographic shading in greyscale, sitting dead centre on a receding perspective grid",
+      "geometry": "one familiar object done properly beats twelve invented ones; the frame is empty and confident around it",
+      "text": "none",
+      "reference": "/home/kilisan/Dropbox/Lucid_Origin_The_Roses_Code_Comic_Cover_PromptArt_Style_The_Th_3.jpg"
+    },
+    "21": {
+      "register": "B",
+      "subject": "six figures of different heights caught mid-action at the same instant, none of them posing, all of them facing east",
+      "geometry": "a cast mid-action is a scene; keep every figure on a different diagonal so nothing reads as a lineup",
+      "text": "none"
+    },
+    "22": {
+      "register": "A",
+      "subject": "a caduceus and a double helix standing side by side at equal height, sharing one base",
+      "geometry": "use symbols people already recognise; the two must be drawn to the same standard of finish so neither wins",
+      "text": "none"
+    },
+    "23": {
+      "register": "A",
+      "subject": "an entirely ornamental panel of interlaced crimson and gold filigree with nothing depicted inside it at all",
+      "geometry": "beauty with no information still has value; the composition must be beautiful enough that the emptiness reads as a choice",
+      "text": "none"
+    },
+    "24": {
+      "register": "A",
+      "subject": "an empty engraved book plate: a gold double-ruled border with corner ornaments and a completely blank cartouche at its centre",
+      "geometry": "a frame waiting for a name that has not been chosen; the blank centre is the subject, not an oversight",
+      "text": "none"
+    },
+    "25": {
+      "register": "C",
+      "subject": "a laboratory instrument built from concentric dials and a sweeping needle, every scale marked in strokes that only look like numbers",
+      "geometry": "it must look like real equipment; each label is noise, so mark scales with tick strokes and never glyphs",
+      "text": "none"
+    },
+    "26": {
+      "register": "C",
+      "subject": "eight identical circular subsystems on a ring around one empty core, connected by thin radial spokes",
+      "geometry": "use the layout and write the labels yourself afterwards; leave every node face blank",
+      "text": "none"
+    },
+    "27": {
+      "register": "C",
+      "subject": "a nine-cell system diagram with correct structure and crude execution: flat mustard fills, thick clumsy outlines, no finesse anywhere",
+      "geometry": "a bad-looking image can still carry the right structure; do not improve on it",
+      "text": "none"
+    },
+    "28": {
+      "register": "C",
+      "subject": "an assembly diagram where rectangular badge callouts point at clean empty white space",
+      "geometry": "badge callouts pointing at nothing: asked to name, failed to name; leader lines must land on empty boxes",
+      "text": "none"
+    },
+    "29": {
+      "register": "C",
+      "subject": "a single polyhedron with exactly eight wheels arranged around it, drawn as pure line-work on a dark ground",
+      "geometry": "the empty version is the most reusable version; nothing else in the frame, no key, no legend, no title block",
+      "text": "none"
+    },
+    "30": {
+      "register": "A",
+      "subject": "an engraved book plate with a heavy gold border, its blank centre now carrying a single crisp line of capital lettering",
+      "geometry": "the one word this series ever spelled correctly; the lettering must be clean, centred, and the only text in the image",
+      "text": {
+        "allow": [
+          "AMPHETAMEMES"
+        ]
+      }
+    },
+    "31": {
+      "register": "C",
+      "subject": "a colour key: eight colour swatches in a numbered column beside the eight-node ring diagram they belong to",
+      "geometry": "a numbered colour-keyed legend is the thing to copy; keep swatch, index mark and node aligned on one grid",
+      "text": {
+        "allow": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      }
+    },
+    "32": {
+      "register": "A",
+      "subject": "an ornate violet-and-gold filigree panel so beautiful that a viewer cannot tell what it is meant to depict",
+      "geometry": "beautiful and uninformative: the trap of good taste; no focal object, no figure, no ground plane",
+      "text": "none"
+    },
+    "33": {
+      "register": "D",
+      "subject": "a finished comic page in three rows of panels, cream paper and black ink with one magenta accent, reading left to right: a whirl, a hand, a small figure, then a tunnel",
+      "geometry": "a real panel grid, a real colour script and one real beat sequence; this is the only image in the series that is already a page",
+      "text": "none"
+    },
+    "34": {
+      "register": "B",
+      "subject": "a small hooded figure from behind, alone at the bottom of an empty cream-white field, with a single magenta eye-form placed exactly above its head",
+      "geometry": "inverted ground: pale paper instead of black; align the symbol exactly with the head so the pair becomes one statement",
+      "text": "none",
+      "ground": "invert the register's usual ground: cream-white paper instead of near-black, with the magenta as the only ink"
+    },
+    "35": {
+      "register": "B",
+      "subject": "a tall column of small chevrons stacked upward, and every single chevron points east",
+      "geometry": "the axis is vertical but every road segment points east, so rule one is visible rather than violated",
+      "text": "none"
+    },
+    "36": {
+      "register": "B",
+      "subject": "two overlapping outlined triangles, upright and inverted, sharing one vertex — seven points where geometry only allows six",
+      "geometry": "the seventh point must land off-axis and read as wrong; hold the frame still and empty around it",
+      "text": "none"
+    },
+    "37": {
+      "register": "B",
+      "subject": "an empty tailored suit on a hanger, its own hood-shaped void where a head would be",
+      "geometry": "the cleanest line-work in the set: fewer strokes than any other cover, one confident contour per edge",
+      "text": "none"
+    },
+    "38": {
+      "register": "B",
+      "subject": "a hooded figure from behind so close it fills the frame, the hood a solid black mass with a single thin red rim light",
+      "geometry": "focal hierarchy beats detail: one dominant shape, no secondary objects, no background incident",
+      "text": "none"
+    },
+    "39": {
+      "register": "B",
+      "subject": "a single large green eye low in the frame, looking down a corridor of blue walls lit by orange lamps",
+      "geometry": "blue and orange is the strongest pair for power; the green is the only third colour and appears nowhere else",
+      "text": "none"
+    },
+    "40": {
+      "register": "E",
+      "subject": "the whole composition reduced to one crimson ink on cream paper: a road running east toward one standing figure",
+      "geometry": "strip it to a single hue and it gains value; no second ink anywhere, all separation carried by line weight and dot density",
+      "text": "none"
+    },
+    "41": {
+      "register": "E",
+      "subject": "an empty page frame: one amber rectangle, one inner margin rule, four corner crop marks, nothing inside",
+      "geometry": "generate the empty frame, never the labelled one; pure geometry, zero text, nothing placed in the field",
+      "text": "none"
+    },
+    "42": {
+      "register": "C",
+      "subject": "a complete infographic sheet — title band, year, subtitle, section headers, a topology diagram, a legend and a paragraph of body copy — where the layout is entirely correct and every word is wrong",
+      "geometry": "real chrome, wrong words: the whole infographic survives on layout alone",
+      "text": {
+        "allow": [
+          "AMPHETAMEMES",
+          "2025",
+          "SYSTEM ATLAS"
+        ]
+      }
+    },
+    "43": {
+      "register": "C",
+      "subject": "a node-link graph of thirty nodes in three distinct shapes and three colours, laid out by a force simulation, one library name printed small in the corner",
+      "geometry": "it knows the tool it is imitating; let the layout be slightly untidy so it reads as generated rather than designed",
+      "text": {
+        "allow": [
+          "Chart.js"
+        ]
+      }
+    },
+    "44": {
+      "register": "C",
+      "subject": "an engineering blueprint sheet: nine stacked layers drawn in cross-section, with dimension rules, leader lines, tick-marked scales and a title block",
+      "geometry": "dials, leader lines and dimension rules are the layout grammar of a real sheet; keep every rule thin, straight and parallel",
+      "text": {
+        "allow": [
+          "LAYER 1",
+          "LAYER 2",
+          "LAYER 3",
+          "LAYER 4",
+          "LAYER 5",
+          "LAYER 6",
+          "LAYER 7",
+          "LAYER 8",
+          "LAYER 9"
+        ]
+      }
+    },
+    "45": {
+      "register": "B",
+      "subject": "nine figures of the same build caught mid-gesture at nine different stages, layered front to back in one frame",
+      "geometry": "figures mid-action is a scene you can describe; stagger them on a single diagonal so all nine read separately",
+      "text": "none"
+    },
+    "46": {
+      "register": "A",
+      "subject": "a tall narrow stack of five slabs rising from a base, and one small shape perched on the very top",
+      "geometry": "a vertical stack with something perched on top is a spine; nothing else in the frame, no ground, no horizon",
+      "text": "none"
+    },
+    "47": {
+      "register": "A",
+      "subject": "a tree trunk whose bark resolves into a single calm face, wearing a thin halo of gold rays at the crown",
+      "geometry": "bark as face plus a halo crown equals authority; the face must be formed from the bark texture, never drawn on top of it",
+      "text": "none"
+    },
+    "48": {
+      "register": "B",
+      "subject": "one symmetrical being at the exact centre, crowned in fire, absolutely still, its left half cyan and its right half magenta-gold",
+      "geometry": "perfect symmetry, dead centre, no motion at all; this is the cover that states the thesis and must feel final",
+      "text": "none"
+    }
+  }
+}
