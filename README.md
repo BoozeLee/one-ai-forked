@@ -67,6 +67,7 @@ the oldest plate in the cabinet and finds neither is older than the other.
 | 25 | 25 — INSTRUMENTATION | [`stories/25.md`](stories/25.md) |
 | 26 | 26 — EIGHT SUBSYSTEMS | [`stories/26.md`](stories/26.md) |
 | 28 | 28 — THE PLACEHOLDERS | [`stories/28.md`](stories/28.md) |
+| 29 | 29 — NO LABELS AT ALL | [`stories/29.md`](stories/29.md) |
 
 <!-- STORY-INDEX:END -->
 
