@@ -66,6 +66,7 @@ the oldest plate in the cabinet and finds neither is older than the other.
 | 24 | 24 — THE BOOK PLATE | [`stories/24.md`](stories/24.md) |
 | 25 | 25 — INSTRUMENTATION | [`stories/25.md`](stories/25.md) |
 | 26 | 26 — EIGHT SUBSYSTEMS | [`stories/26.md`](stories/26.md) |
+| 28 | 28 — THE PLACEHOLDERS | [`stories/28.md`](stories/28.md) |
 
 <!-- STORY-INDEX:END -->
 
