@@ -1,6 +1,6 @@
 # Amphetamemes — launch pack
 
-26 postable issues, 1–26, of 48.
+27 postable issues, 1–28, of 48.
 Each card is the exact text to paste into X, the plate to attach, and the link.
 
 - Repo: https://github.com/BoozeLee/one-ai-forked
@@ -408,6 +408,23 @@ Each card is the exact text to paste into X, the plate to attach, and the link.
 - attach: `art/26.jpg` (174 KB, 900x900)
 - story: https://github.com/BoozeLee/one-ai-forked/blob/main/stories/26.md
 - plate: https://github.com/BoozeLee/one-ai-forked/blob/main/art/26.jpg
+
+## 28 — THE PLACEHOLDERS
+
+> Every blank in the ruins is a hole in a page somebody meant to write.
+>
+> Four badges on the wall, drawn with care, filled with nothing.
+>
+> The same glyph, missing four times over.
+>
+> Each one a little smaller than the last.
+>
+> 28 / 48
+
+- characters: **226** / 280
+- attach: `art/28.jpg` (239 KB, 900x900)
+- story: https://github.com/BoozeLee/one-ai-forked/blob/main/stories/28.md
+- plate: https://github.com/BoozeLee/one-ai-forked/blob/main/art/28.jpg
 
 ---
 
