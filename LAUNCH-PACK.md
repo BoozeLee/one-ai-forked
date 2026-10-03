@@ -1,6 +1,6 @@
 # Amphetamemes — launch pack
 
-27 postable issues, 1–28, of 48.
+28 postable issues, 1–29, of 48.
 Each card is the exact text to paste into X, the plate to attach, and the link.
 
 - Repo: https://github.com/BoozeLee/one-ai-forked
@@ -425,6 +425,23 @@ Each card is the exact text to paste into X, the plate to attach, and the link.
 - attach: `art/28.jpg` (239 KB, 900x900)
 - story: https://github.com/BoozeLee/one-ai-forked/blob/main/stories/28.md
 - plate: https://github.com/BoozeLee/one-ai-forked/blob/main/art/28.jpg
+
+## 29 — NO LABELS AT ALL
+
+> Eight wheels on the cart in the yard. Eight on the plate. Nothing written on either.
+>
+> Everything else in the drawer had a name, a number, a date.
+>
+> A named thing is a finished thing.
+>
+> The empty one was the only shape in the room with anywhere left to go.
+>
+> 29 / 48
+
+- characters: **262** / 280
+- attach: `art/29.jpg` (176 KB, 900x900)
+- story: https://github.com/BoozeLee/one-ai-forked/blob/main/stories/29.md
+- plate: https://github.com/BoozeLee/one-ai-forked/blob/main/art/29.jpg
 
 ---
 
